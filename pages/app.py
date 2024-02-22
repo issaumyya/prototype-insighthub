@@ -3,7 +3,6 @@ import pandas as pd
 import datetime
 import plotly.express as px
 import plotly.graph_objects as go
-from pages import 1_ChatBot
 
 # Streamlit UI
 st.set_page_config(
@@ -15,15 +14,6 @@ st.set_page_config(
 st.sidebar.markdown(
         "<h3 style='text-align: center; color: white;'>InsightHub: Empowering Investment Decisions in India's Entrepreneurial Landscape </h1>",
         unsafe_allow_html=True)
-selected_page = st.sidebar.radio("Navigation", ["Home", "ChatBot"])
-
-# Display selected page content
-if selected_page == "Home":
-    st.title("Home Page")
-    st.write("Welcome to the home page!")
-elif selected_page == "ChatBot":
-    st.title("ChatBot")
-    1_ChatBot.run()
     
 df = pd.read_csv("Dataset_Unicorn.csv", encoding='latin1')
 
