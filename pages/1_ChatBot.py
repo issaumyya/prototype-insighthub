@@ -5,14 +5,9 @@ chatbot_pipeline = pipeline("conversational")
 
 st.title("Ask Anything!")
 
-# User input field
 user_input = st.text_input("Startups...", "")
 
-# Check if user input is not empty
 if user_input:
-    # Get response from the chatbot
     response = chatbot_pipeline(user_input)[0]['generated_text']
-    
-    # Display response
     st.text_area("Chatbot:", value=response, height=200, max_chars=None, key=None)
 
