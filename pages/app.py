@@ -3,7 +3,6 @@ import pandas as pd
 import datetime
 import plotly.express as px
 import plotly.graph_objects as go
-from transformers import pipeline
 
 # Streamlit UI
 st.set_page_config(
@@ -15,14 +14,6 @@ st.set_page_config(
 st.sidebar.markdown(
         "<h3 style='text-align: center; color: white;'>InsightHub: Empowering Investment Decisions in India's Entrepreneurial Landscape </h1>",
         unsafe_allow_html=True)
-
-chatbot_pipeline = pipeline("conversational")
-user_input = st.sidebar.text_input("You:", "")
-if user_input:
-    response = chatbot_pipeline(user_input)[0]['generated_text']
-    
-    # Display response
-    st.sidebar.text_area("Chatbot:", value=response, height=200, max_chars=None, key=None)
 
 df = pd.read_csv("Dataset_Unicorn.csv", encoding='latin1')
 
