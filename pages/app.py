@@ -3,7 +3,7 @@ import pandas as pd
 import datetime
 import plotly.express as px
 import plotly.graph_objects as go
-
+from pages import ChatBot
 
 # Streamlit UI
 st.set_page_config(
@@ -23,7 +23,7 @@ if selected_page == "Home":
     st.write("Welcome to the home page!")
 elif selected_page == "ChatBot":
     st.title("ChatBot")
-    subprocess.run("streamlit run 1_ChatBot.py", shell=True)
+    ChatBot.run()
     
 df = pd.read_csv("Dataset_Unicorn.csv", encoding='latin1')
 
