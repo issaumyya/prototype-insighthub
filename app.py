@@ -14,7 +14,7 @@ st.set_page_config(
 st.sidebar.markdown(
         "<h3 style='text-align: center; color: white;'>InsightHub: Empowering Investment Decisions in India's Entrepreneurial Landscape </h1>",
         unsafe_allow_html=True)
-    
+
 df = pd.read_csv("Dataset_Unicorn.csv", encoding='latin1')
 
 
