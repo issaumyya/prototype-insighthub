@@ -6,3 +6,5 @@ geopandas
 leafmap
 datetime
 plotly
+transformers
+pipeline
