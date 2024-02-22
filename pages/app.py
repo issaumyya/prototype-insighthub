@@ -15,7 +15,16 @@ st.set_page_config(
 st.sidebar.markdown(
         "<h3 style='text-align: center; color: white;'>InsightHub: Empowering Investment Decisions in India's Entrepreneurial Landscape </h1>",
         unsafe_allow_html=True)
+selected_page = st.sidebar.radio("Navigation", ["Home", "ChatBot"])
 
+# Display selected page content
+if selected_page == "Home":
+    st.title("Home Page")
+    st.write("Welcome to the home page!")
+elif selected_page == "ChatBot":
+    st.title("ChatBot")
+    subprocess.run("streamlit run 1_ChatBot.py", shell=True)
+    
 df = pd.read_csv("Dataset_Unicorn.csv", encoding='latin1')
 
 
