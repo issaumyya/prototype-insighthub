@@ -2,7 +2,8 @@ import openai
 import streamlit as st
 st.title("ChatBot")
 #connect openai key
-openai.api_key = st.secrets["OPENAI_API_KEY"]
+
+openai.api_key = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 if "openai_model" not in st.session_state:
     st.session_state["openai_model"] = "gpt-3.5-turbo"
 if "messages" not in st.session_state:
