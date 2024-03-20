@@ -19,26 +19,24 @@ if prompt := st.text_input("What is up?"):
     st.session_state.messages.append({"role": "user", "content": prompt})
 
     # Display user message in chat message container
-    with st.echo():
-        st.chat_message(prompt, "user")
+    st.text(f"User: {prompt}")
 
     # Display assistant message in chat message container
-    with st.echo():
-        full_response = ""
-        # Simulate stream of response with milliseconds delay
-        for response in openai.ChatCompletion.create(
-            model=st.session_state.openai_model,
-            messages=[
-                {"role": m["role"], "content": m["content"]}
-                for m in st.session_state.messages
-            ],
-            # Will provide lively writing
-            stream=True,
-        ):
-            # Get content in response
-            full_response += response.choices[0].delta.get("content", "")
-            # Add a blinking cursor to simulate typing
-            st.chat_message(full_response + "▌", "assistant", type="stream")
-        st.chat_message(full_response, "assistant")
-        # Add assistant response to chat history
-        st.session_state.messages.append({"role": "assistant", "content": full_response})
+    full_response = ""
+    # Simulate stream of response with milliseconds delay
+    for response in openai.ChatCompletion.create(
+        model=st.session_state.openai_model,
+        messages=[
+            {"role": m["role"], "content": m["content"]}
+            for m in st.session_state.messages
+        ],
+        # Will provide lively writing
+        stream=True,
+    ):
+        # Get content in response
+        full_response += response.choices[0].delta.get("content", "")
+        # Add a blinking cursor to simulate typing
+        st.text(f"Assistant: {full_response}▌")
+    st.text(f"Assistant: {full_response}")
+    # Add assistant response to chat history
+    st.session_state.messages.append({"role": "assistant", "content": full_response})
