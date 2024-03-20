@@ -21,7 +21,7 @@ if prompt := st.chat_input("What is up?"):
         message_placeholder = st.empty()
         full_response = ""
         # Simulate stream of response with milliseconds delay
-        for response in openai.ChatCompletion.create(
+        for response in openai.chat.completions.create()(
             model=st.session_state["openai_model"],
             messages=[
                 {"role": m["role"], "content": m["content"]}
