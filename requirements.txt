@@ -8,3 +8,4 @@ datetime
 plotly
 transformers
 pipeline
+OpenAI
