@@ -9,4 +9,4 @@ plotly
 transformers
 pipeline
 openai
-openai streamlit
+OpenAI
