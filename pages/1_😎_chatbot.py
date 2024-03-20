@@ -29,7 +29,7 @@ if prompt := st.chat_input("What is up?"):
             ],
             #will provide lively writing
             stream=True,
-        ):
+        )
             #get content in response
             full_response += response.choices[0].delta.get("content", "")
             # Add a blinking cursor to simulate typing
