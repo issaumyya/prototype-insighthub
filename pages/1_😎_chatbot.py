@@ -11,38 +11,29 @@ openai.api_key = st.secrets["OPENAI_API_KEY"]
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# Initialize OpenAI model in session state if it doesn't exist
-if "openai_model" not in st.session_state:
-    st.session_state.openai_model = "text-davinci-002"  # Change this to your desired model
-
-# Function to display chat messages
-def display_chat_message(role, content):
-    if role == "user":
-        # Style user message
-        st.write(f'<div style="background-color: #d1e8ff; padding: 10px; border-radius: 10px; text-align: right;">{content}</div>', unsafe_allow_html=True)
-    elif role == "assistant":
-        # Style assistant message
-        st.write(f'<div style="background-color: #e2f3ff; padding: 10px; border-radius: 10px; text-align: left;">{content}</div>', unsafe_allow_html=True)
-
-# User input prompt
-prompt = st.text_input("You:", key="user_input")
-
-# Process user input and display chat messages
-if st.button("Send"):
-    if prompt:
-        # Append user message to session state messages
-        st.session_state.messages.append({"role": "user", "content": prompt})
-
-        # Display user message
-        display_chat_message("user", prompt)
-
-        # Display assistant message
+if prompt := st.chat_input("What is up?"):
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    # Display user message in chat message container
+    with st.chat_message("user"):
+        st.markdown(prompt)
+    # Display assitant message in chat message container
+    with st.chat_message("assistant"):
+        message_placeholder = st.empty()
         full_response = ""
+        # Simulate stream of response with milliseconds delay
         for response in openai.ChatCompletion.create(
-            model=st.session_state.openai_model,
-            messages=[{"role": m["role"], "content": m["content"]} for m in st.session_state.messages],
+            model=st.session_state["openai_model"],
+            messages=[
+                {"role": m["role"], "content": m["content"]}
+                for m in st.session_state.messages
+            ],
+            #will provide lively writing
             stream=True,
         ):
+            #get content in response
             full_response += response.choices[0].delta.get("content", "")
-            display_chat_message("assistant", full_response)
-        st.session_state.messages.append({"role": "assistant", "content": full_response})
+            # Add a blinking cursor to simulate typing
+            message_placeholder.markdown(full_response + "▌")
+        message_placeholder.markdown(full_response)
+    # Add assistant response to chat history
+    st.session_state.messages.append({"role": "assistant", "content": full_response})
