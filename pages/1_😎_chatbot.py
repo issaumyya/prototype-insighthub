@@ -31,10 +31,5 @@ if prompt := st.chat_input("What is up?"):
             stream=True,
         )
         response = st.write_stream(stream)
-        #get content in response
-        full_response += response.choices[0].delta.get("content", "")
-        # Add a blinking cursor to simulate typing
-        message_placeholder.markdown(full_response + "▌")
-        message_placeholder.markdown(full_response)
         # Add assistant response to chat history
 st.session_state.messages.append({"role": "assistant", "content": full_response})
