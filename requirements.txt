@@ -9,4 +9,3 @@ plotly
 transformers
 pipeline
 openai
-OpenAI
