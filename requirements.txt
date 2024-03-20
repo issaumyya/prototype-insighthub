@@ -8,4 +8,4 @@ datetime
 plotly
 transformers
 pipeline
-OpenAI
+openai==0.28
