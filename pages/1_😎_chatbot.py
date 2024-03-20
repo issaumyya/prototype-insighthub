@@ -20,7 +20,7 @@ if "messages" not in st.session_state:
 
 if "max_messages" not in st.session_state:
     # Counting both user and assistant messages, so 10 rounds of conversation
-    st.session_state.max_messages = 20
+    st.session_state.max_messages = 50
 
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
