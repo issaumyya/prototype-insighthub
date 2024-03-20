@@ -21,7 +21,7 @@ if prompt := st.chat_input("What is up?"):
         message_placeholder = st.empty()
         full_response = ""
         # Simulate stream of response with milliseconds delay
-        for response in openai.chat.completions.create(
+        stream = openai.chat.completions.create(
             model=st.session_state["openai_model"],
             messages=[
                 {"role": m["role"], "content": m["content"]}
@@ -30,6 +30,7 @@ if prompt := st.chat_input("What is up?"):
             #will provide lively writing
             stream=True,
         )
+        response = st.write_stream(stream)
             #get content in response
             full_response += response.choices[0].delta.get("content", "")
             # Add a blinking cursor to simulate typing
