@@ -9,3 +9,6 @@ plotly
 transformers
 pipeline
 openai
+hugchat
+streamlit-chat
+streamlit-extras
