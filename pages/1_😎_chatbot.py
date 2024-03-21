@@ -6,7 +6,8 @@ st.title("ChatBot")
 
 # Connect OpenAI API key
 openai.api_key = st.secrets["OPENAI_API_KEY"]
-
+if "openai_model" not in st.session_state:
+    st.session_state["openai_model"] = "gpt-3.5-turbo"
 # Initialize messages attribute if it doesn't exist
 if "messages" not in st.session_state:
     st.session_state.messages = []
