@@ -25,9 +25,6 @@ with st.sidebar:
         llm = 'a16z-infra/llama7b-v2-chat:4f0a4744c7295c024a1de15e1a63c880d3da035fa1f49bfd344fe076074c8eea'
     elif selected_model == 'Llama2-13B':
         llm = 'a16z-infra/llama13b-v2-chat:df7690f1994d94e96ad9d568eac121aecf50684a0b0963b25a41cc40061269e5'
-    temperature = 0.1 
-    top_p = 0.9 
-    max_length = 256 
 
 # Store LLM generated responses
 if "messages" not in st.session_state.keys():
@@ -52,7 +49,7 @@ def generate_llama2_response(prompt_input):
             string_dialogue += "Assistant: " + dict_message["content"] + "\n\n"
     output = replicate.run('a16z-infra/llama13b-v2-chat:df7690f1994d94e96ad9d568eac121aecf50684a0b0963b25a41cc40061269e5', 
                            input={"prompt": f"{string_dialogue} {prompt_input} Assistant: ",
-                                  "temperature":temperature, "top_p":top_p, "max_length":max_length, "repetition_penalty":1})
+                                  "temperature":0.1, "top_p":0.9, "max_length":256, "repetition_penalty":1})
     return output
 
 # User-provided prompt
