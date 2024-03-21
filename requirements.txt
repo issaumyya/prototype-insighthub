@@ -8,5 +8,4 @@ datetime
 plotly
 transformers
 pipeline
-openai
-langchain
+replicate
