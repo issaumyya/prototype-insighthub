@@ -34,11 +34,9 @@ with col1:
   else:
     st.write("Please select a filter from the sidebar.")
 
-# Add content to columns and nested columns
 with col2:
   startup_counts = df1['Founded In'].value_counts().reset_index()
   startup_counts.columns = ['Founded In', 'Number of Startups']
   fig = px.line(startup_counts, x='Founded In', y='Number of Startups',
              labels={'Founded In': 'Year Founded', 'Number of Startups': 'Number of Startups'},
              title='Number of Unicorns Founded Each Year')
-  st.plotly_chart(fig,use_container_width=True, height=150)
