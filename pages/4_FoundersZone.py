@@ -33,6 +33,3 @@ with col1:
     st.plotly_chart(incubator_graph)
   else:
     st.write("Please select a filter from the sidebar.")
-
-with col2:
-
