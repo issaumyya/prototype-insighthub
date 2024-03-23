@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
-from plotly.express import px
+import plotly.express as px
+import plotly.graph_objects as go
 
 # Load data
 df1 = pd.read_csv("unicorns100.csv")
