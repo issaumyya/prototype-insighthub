@@ -7,7 +7,6 @@ data = pd.read_csv("StartupIndiaStats.csv")
 
 # Create initial columns with desired ratio (3:1:1)
 col1, col2, col3 = st.columns([2, 1, 1])
-st.title("Indian Startups at a Glance")
 # Create a container within the first column
 with col1: 
   def create_state_distribution(data, filter_by, top_value):
@@ -24,15 +23,12 @@ with col1:
   selected_filter = filter_by_select
   if selected_filter == "Startups":
     startup_graph = create_state_distribution(data.copy(), "Startups", top_states_slider)
-    st.header("Distribution of Startups Across States")
     st.plotly_chart(startup_graph)
   elif selected_filter == "Accelerators":
     accelerator_graph = create_state_distribution(data.copy(), "Accelerators", top_states_slider)
-    st.header("Distribution of Accelerators Across States")
     st.plotly_chart(accelerator_graph)
   elif selected_filter == "Incubators":
     incubator_graph = create_state_distribution(data.copy(), "Incubators", top_states_slider)
-    st.header("Distribution of Incubators Across States")
     st.plotly_chart(incubator_graph)
   else:
     st.write("Please select a filter from the sidebar.")
