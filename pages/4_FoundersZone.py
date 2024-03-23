@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from plotly.express import px
+import plotly.express as px
 import plotly.graph_objects as go
 
 data = pd.read_csv("StartupIndiaStats.csv")
