@@ -3,9 +3,6 @@ import pandas as pd
 from plotly.express import px
 
 data = pd.read_csv("StartupIndiaStats.csv")
-fig_state_distribution = px.bar(
-    data, x="State", y="Startups", title="Distribution of Startups Across States"
-)
 
 # Create initial columns with desired ratio (3:1:1)
 col1, col2, col3 = st.columns([3, 1, 1])
@@ -18,7 +15,9 @@ with col1:
 # Create nested columns inside the container (visually appears within col1)
 nested_col1, nested_col2, nested_col3 = nested_container.columns(3)
 with nested_col1:
-  st.plotly_chart(fig_state_distribution)
+    fig_state_distribution = px.bar(
+    data, x="State", y="Startups", title="Distribution of Startups Across States")
+    st.plotly_chart(fig_state_distribution)
 
 # Add content to columns and nested columns
 with col2:
