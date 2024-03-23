@@ -11,9 +11,8 @@ col1, col2, col3 = st.columns([3, 1, 1])
 # Create a container within the first column
 with col1:
   st.title("Indian Startups at a Glance")
-  fig_state_distribution = px.bar(
-    data, x="State", y="Startups", title="Distribution of Startups Across States")
-    st.plotly_chart(fig_state_distribution)
+  fig_state_distribution = px.bar(data, x="State", y="Startups", title="Distribution of Startups Across States")
+  st.plotly_chart(fig_state_distribution)
 
 # Add content to columns and nested columns
 with col2:
