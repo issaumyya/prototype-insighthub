@@ -16,11 +16,9 @@ with col1:
     #fig.update_traces(marker_color='gray')  # Set initial color
     max_value = filtered_data[filter_by].max()
     #fig.update_traces(marker=dict(color=st.colors.green), selector=max(fig.data, key='y'))  # Highlight max
-    #fig.update_yaxes(range=[0, filtered_data[filter_by].max() * 1.1])  # Adjust scale slightly above max
     fig.update_yaxes(range=[0, max_value * 1.2])
     return fig
     
-  st.text("Filter Options")
   top_states_slider = st.sidebar.slider("Number of Top States", min_value=1, max_value=10, value=5)
   filter_by_select = st.sidebar.selectbox("Filter By", ["Startups", "Accelerators", "Incubators"])
   selected_filter = filter_by_select
