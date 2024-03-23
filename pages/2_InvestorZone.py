@@ -25,7 +25,7 @@ df1["Funding Stage"] = pd.cut(df1["Funding_num"], bins=[0, 10, 50, 100, float("i
 
 # Sidebar filters
 sector_filter = st.sidebar.selectbox("Filter by Sector", df1["Sector"].unique())
-funding_range = st.sidebar.slider("Total Funding Range (USD Billion)", min_value=0, max_value=df1["Funding_num"].max())
+funding_range = st.sidebar.slider("Total Funding Range", min_value=0, max_value=df1["Funding_num"].max())
 min_years_unicorn = st.sidebar.slider("Minimum Years to Unicorn", min_value=0, max_value=df1.get("Years to Unicorn", 0).max())
 min_valuation = st.sidebar.slider("Minimum Valuation (USD Billion)", min_value=0, max_value=df1["Val_num"].max())
 stage_filter = st.sidebar.selectbox("Funding Stage", df1["Funding Stage"].unique())
