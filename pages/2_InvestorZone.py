@@ -22,7 +22,9 @@ df1.loc[df1['Total Funding'].notnull() & df1['Total Funding'].astype(str).str.en
 df1.loc[df1['Total Funding'].notnull() & df1['Total Funding'].astype(str).str.endswith('Bn'), 'Funding_num'] *= 100000000
 
 df1["Funding Stage"] = pd.cut(df1["Funding_num"], bins=[0, 10, 50, 100, float("inf")], labels=["Seed", "Series A", "Series B+", "Late Stage"])
-print(df1["Funding_num"].max())
+if not pd.api.types.is_numeric_dtype(df1["Funding_num"]):
+    # Handle non-numeric data (e.g., convert to numeric or filter)
+    df1["Funding_num"] = pd.to_numeric(df1["Funding_num"]
 # Sidebar filters
 sector_filter = st.sidebar.selectbox("Filter by Sector", df1["Sector"].unique())
 funding_range = st.sidebar.slider("Total Funding Range", min_value=0, max_value=df1["Funding_num"].max())
