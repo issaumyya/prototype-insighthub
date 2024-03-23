@@ -37,6 +37,6 @@ with col1:
 with col2:
   startup_counts = df1['Founded In'].value_counts().reset_index()
   startup_counts.columns = ['Founded In', 'Number of Startups']
-  fig = px.line(startup_counts, x='Founded In', y='Number of Startups',
+  fig = px.bar(startup_counts, x='Founded In', y='Number of Startups',
              labels={'Founded In': 'Year Founded', 'Number of Startups': 'Number of Startups'},
              title='Number of Unicorns Founded Each Year')
