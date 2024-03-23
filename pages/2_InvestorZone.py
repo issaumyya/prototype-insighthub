@@ -20,10 +20,10 @@ df1['Funding_num'] = pd.to_numeric(df1['Funding_num'], errors='coerce')
 
 df1.loc[df1['Total Funding'].notnull() & df1['Total Funding'].astype(str).str.endswith('Mn'), 'Funding_num'] *= 1000000
 df1.loc[df1['Total Funding'].notnull() & df1['Total Funding'].astype(str).str.endswith('Bn'), 'Funding_num'] *= 100000000
-
-df1["Funding Stage"] = pd.cut(df1["Funding_num"], bins=[0, 10, 50, 100, float("inf")], labels=["Seed", "Series A", "Series B+", "Late Stage"])
 if not pd.api.types.is_numeric_dtype(df1["Funding_num"]):
     df1["Funding_num"] = pd.to_numeric(df1["Funding_num"]
+                                       
+df1["Funding Stage"] = pd.cut(df1["Funding_num"], bins=[0, 10, 50, 100, float("inf")], labels=["Seed", "Series A", "Series B+", "Late Stage"])
 sector_filter = st.sidebar.selectbox("Filter by Sector", df1["Sector"].unique())
 funding_range = st.sidebar.slider("Total Funding Range", min_value=0, max_value=df1["Funding_num"].max())
 min_years_unicorn = st.sidebar.slider("Minimum Years to Unicorn", min_value=0, max_value=df1.get("Years to Unicorn", 0).max())
