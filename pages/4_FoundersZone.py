@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 data = pd.read_csv("StartupIndiaStats.csv")
 df1 = pd.read_csv("unicorns100.csv")
 # Create initial columns with desired ratio (3:1:1)
-col1, col2, col3 = st.columns([1, 1, 1])
+col1, col2 = st.columns
 # Create a container within the first column
 with col1: 
   def create_state_distribution(data, filter_by, top_value):
@@ -42,6 +42,3 @@ with col2:
              labels={'Founded In': 'Year Founded', 'Number of Startups': 'Number of Startups'},
              title='Number of Unicorns Founded Each Year')
   st.plotly_chart(fig,use_container_width=True, height=150)
-
-with col3:
-  st.write("Content in Column 3")
