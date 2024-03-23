@@ -1,33 +1,27 @@
 import streamlit as st
 
-# Create columns
-col1, col2, col3 = st.columns([1, 3, 2])
+# Create initial columns with desired ratio (3:1:1)
+col1, col2, col3 = st.columns([3, 1, 1])
 
-# Add content to each column
+# Create a container within the first column
 with col1:
-    st.subheader("#1  16.")
-    st.write("19")
+  nested_container = st.container()
 
+# Create nested columns inside the container (visually appears within col1)
+nested_col1, nested_col2, nested_col3 = nested_container.columns(3)
+
+# Add content to columns and nested columns
 with col2:
-    st.subheader("#2 - Some metrics insights")
-    st.subheader("based on clusters")
-    st.write("#3- Filters on the")
-    st.write("basis of region")
-    st.write("#4-Felter on the basis")
-    st.write("of sector")
-    st.write("#5-")
-    st.write("geospatial distru-")
-    st.write("bution with hover")
-    st.write("on some nalues.")
-    st.write("#6 same as #2")
+  st.write("Content in Column 2")
 
 with col3:
-    st.subheader("#7 - Based on any")
-    st.write("growith trend.")
-    st.write("amalgamation")
-    st.write("(Rev.")
-    st.write("groveta")
-    st.write("th")  
-    st.subheader("#8& #9-risk estimation/factor importance")
-    st.write("#10")
-    st.write("some motivational quote.")
+  st.write("Content in Column 3")
+
+with nested_col1:
+  st.write("Nested Content 1")
+
+with nested_col2:
+  st.write("Nested Content 2")
+
+with nested_col3:
+  st.write("Nested Content 3")
