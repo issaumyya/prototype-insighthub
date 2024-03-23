@@ -4,7 +4,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 data = pd.read_csv("StartupIndiaStats.csv")
-
+df1 = pd.read_csv("unicorns100.csv")
 # Create initial columns with desired ratio (3:1:1)
 col1, col2, col3 = st.columns([2, 1, 1])
 # Create a container within the first column
@@ -36,7 +36,12 @@ with col1:
 
 # Add content to columns and nested columns
 with col2:
-  st.write("Content in Column 2")
+  startup_counts = df1['Founded In'].value_counts().reset_index()
+    startup_counts.columns = ['Founded In', 'Number of Startups']
+    fig = px.line(startup_counts, x='Founded In', y='Number of Startups',
+             labels={'Founded In': 'Year Founded', 'Number of Startups': 'Number of Startups'},
+             title='Number of Unicorns Founded Each Year')
+    st.plotly_chart(fig,use_container_width=True, height=150)
 
 with col3:
   st.write("Content in Column 3")
