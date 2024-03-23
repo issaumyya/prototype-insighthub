@@ -13,9 +13,9 @@ with col1:
   def create_state_distribution(data, filter_by, top_value):
     filtered_data = data.nlargest(top_value, filter_by)  # Filter top states
     fig = px.bar(filtered_data, x="State", y=filter_by, title=f"Top {top_value} States by {filter_by.capitalize()}")
-    fig.update_traces(marker_color='gray')  # Set initial color
-    max_value = filtered_data[filter_by].max()
-    fig.update_traces(marker=dict(color=st.colors.green), selector=max(fig.data, key='y'))  # Highlight max
+    #fig.update_traces(marker_color='gray')  # Set initial color
+    #max_value = filtered_data[filter_by].max()
+    #fig.update_traces(marker=dict(color=st.colors.green), selector=max(fig.data, key='y'))  # Highlight max
     fig.update_yaxes(range=[0, filtered_data[filter_by].max() * 1.1])  # Adjust scale slightly above max
     return fig
     
