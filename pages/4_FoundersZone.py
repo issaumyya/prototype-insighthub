@@ -37,11 +37,11 @@ with col1:
 # Add content to columns and nested columns
 with col2:
   startup_counts = df1['Founded In'].value_counts().reset_index()
-    startup_counts.columns = ['Founded In', 'Number of Startups']
-    fig = px.line(startup_counts, x='Founded In', y='Number of Startups',
+  startup_counts.columns = ['Founded In', 'Number of Startups']
+  fig = px.line(startup_counts, x='Founded In', y='Number of Startups',
              labels={'Founded In': 'Year Founded', 'Number of Startups': 'Number of Startups'},
              title='Number of Unicorns Founded Each Year')
-    st.plotly_chart(fig,use_container_width=True, height=150)
+  st.plotly_chart(fig,use_container_width=True, height=150)
 
 with col3:
   st.write("Content in Column 3")
