@@ -16,7 +16,7 @@ with col1:
     max_value = filtered_data[filter_by].max()
     #fig.update_traces(marker=dict(color=st.colors.green), selector=max(fig.data, key='y'))  # Highlight max
     fig.update_yaxes(range=[0, max_value * 1.2])
-    fig.update_layout(width=200, height=150)
+    fig.update_layout(width=200, height=450)
     return fig
    
   top_states_slider = st.sidebar.slider("Number of Top States", min_value=1, max_value=10, value=5)
