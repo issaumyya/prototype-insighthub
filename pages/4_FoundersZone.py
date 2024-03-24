@@ -37,9 +37,8 @@ with col1:
     fig = px.bar(filtered_data, x="State", y=filter_by, title=f"Top {top_value} States by {filter_by.capitalize()}")
     #fig.update_traces(marker_color='gray')  # Set initial color
     max_value = filtered_data[filter_by].max()
-    #fig.update_traces(marker=dict(color=st.colors.green), selector=max(fig.data, key='y'))  # Highlight max
+    fig.update_traces(marker=dict(color=st.colors.green), selector=max(fig.data, key='y'))  # Highlight max
     fig.update_yaxes(range=[0, max_value * 1.2])
-    #fig.update_layout(width=200, height=450)
     return fig
   selected_filter = filter_by_select
   if selected_filter == "Startups":
