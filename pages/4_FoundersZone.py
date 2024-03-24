@@ -86,5 +86,4 @@ fig2.update_layout(
         title = "Number of Investors Backing Indian Startups",
         showlegend = True
 )
-
 st.plotly_chart(fig2)
