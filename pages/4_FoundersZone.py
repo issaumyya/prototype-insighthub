@@ -45,4 +45,4 @@ with col2:
     hole=.4,  # Adjust the hole size for a donut chart (0 for regular pie)
     title='Soonicorn Distribution by Sector'
 )
-  st.plotly_chart(pie_fig,use_container_width=True, height = 150)
+  st.plotly_chart(pie_fig)
