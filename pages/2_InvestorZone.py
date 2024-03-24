@@ -63,3 +63,43 @@ fig.update_layout(xaxis_title=selected_x_axis, yaxis_title="Sector Name")
 fig.update_traces(textposition="outside")  # Display data point values outside bars
 fig.update_layout(showlegend=False)
 st.plotly_chart(fig)
+
+late_stage_data = pd.DataFrame({
+  "sectors": ["Fintech", "Ecommerce", "Enterprisetech", "Cleantech", "Consumer Services", "Deeptech", "Others"],
+  "funding_amount": [2.1, 1.3, 0.6, 0.6, 0.3, 0.1, 0.6]
+})
+
+growth_stage_data = pd.DataFrame({
+  "sectors": ["Fintech", "Ecommerce", "Enterprisetech", "Deeptech", "Logistics", "Cleantech", "Others"],
+  "funding_amount": [0.721, 0.543, 0.489, 0.209, 0.200, 0.190, 0.587]
+})
+
+seed_stage_data = pd.DataFrame({
+  "sectors": ["Enterprisetech", "Fintech", "Ecommerce", "Cleantech", "Deeptech", "Media & Entertainment", "Others"],
+  "funding_amount": [0.143, 0.139, 0.089, 0.057, 0.051, 0.046, 0.155]
+})
+
+selected_stage = None
+selected_stage = st.radio("Select Funding Stage:", ["Late Stage", "Growth Stage", "Seed Stage"])
+
+def get_top_sector(data):
+  top_sector = data["sectors"].iloc[data["funding_amount"].idxmax()]
+  return top_sector
+
+# Display based on selected stage
+if selected_stage is not None:
+  # Select the appropriate data based on the chosen stage
+  if selected_stage == "Late Stage":
+    data = late_stage_data.copy()  # Avoid modifying original DataFrame
+  elif selected_stage == "Growth Stage":
+    data = growth_stage_data.copy()
+  else:
+    data = seed_stage_data.copy()
+
+  # Pie chart
+  fig = px.pie(data, values="funding_amount", names="sectors", title=f"{selected_stage} Investment Distribution")
+  st.plotly_chart(fig)
+
+  # Top sector text
+  top_sector = get_top_sector(data.copy())
+  st.write(f"Top Sector in {selected_stage}: {top_sector}")
