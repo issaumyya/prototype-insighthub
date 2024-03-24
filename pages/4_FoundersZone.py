@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 data = pd.read_csv("StartupIndiaStats.csv")
 df1 = pd.read_csv("unicorns100.csv")
 # Create initial columns with desired ratio (3:1:1)
-col1, col2 = st.columns((2))
+col1, col2, col3 = st.columns((3))
 # Create a container within the first column
 with col1: 
   def create_state_distribution(data, filter_by, top_value):
