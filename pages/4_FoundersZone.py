@@ -116,7 +116,7 @@ parent_sizes = df4.groupby('Sector')['Value'].sum()
 # Create the treemap with Plotly
 fig4 = go.Figure(go.Treemap(
     parents=df4['Sector'],  # Define parents for each subsector
-    labels=df4['Subsector'],  # Set subsector names as labels
+    names=df4['Subsector'],  # Set subsector names as labels
     values=df4['Value'],  # Set subsector values
     branchvalues='total'  # Calculate size based on subsector values
 ))
