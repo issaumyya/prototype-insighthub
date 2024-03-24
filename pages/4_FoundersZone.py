@@ -83,6 +83,6 @@ fig2 = go.Figure(go.Waterfall(
 
 fig2.update_layout(
         title = "Number of Investors Backing Indian Startups",
-        showlegend = True
+        showlegend = False
 )
 st.plotly_chart(fig2)
