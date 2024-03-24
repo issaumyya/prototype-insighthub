@@ -19,7 +19,7 @@ with col2:
             padding: 2px;
             border-radius: 15px;
             border: 1px solid rgba(255, 255, 255, 0.18);
-            color: #ffffff;
+            color: #076D90;
             text-align: center;
         }
         .textbox h3{
