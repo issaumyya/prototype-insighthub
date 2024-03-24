@@ -34,3 +34,7 @@ with col1:
     st.plotly_chart(incubator_graph)
   else:
     st.write("Please select a filter from the sidebar.")
+with col2:
+  sectors = ["Fintech", "Ecommerce", "Enterprisetech", "Media & Entertainment", "Edtech", "Traveltech", "Others"]
+  soonicorns = [37, 18, 17, 7, 7, 7, 22]
+  
