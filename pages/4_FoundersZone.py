@@ -26,7 +26,7 @@ with col2:
             text-align: center;
         }
         .textbox h3{
-            font-size: 18px;
+            font-size: 22px;
             font-weight: bold;
             margin: 0;
         }
