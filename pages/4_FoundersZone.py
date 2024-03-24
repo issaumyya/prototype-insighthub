@@ -113,7 +113,7 @@ df4 = pd.DataFrame(data1)
 
 # Calculate parent sector size (assuming all subsectors belong to their respective sectors)
 parent_sizes = df4.groupby('Sector')['Value'].sum()
-from plotly.colorscales import Viridis  # Import Viridis color scale
+
 # Create the treemap with Plotly
 fig3 = go.Figure(go.Treemap(
     parents=df4['Sector'],  # Define parents for each subsector
@@ -128,5 +128,5 @@ fig3.update_layout(
     title_text='Funding Amount (in Mn) by Sector')
 
 # Display the treemap in Streamlit
-fig3.update_traces(marker_color=Viridis) 
+fig3.update_traces(root_color="lightgrey")
 st.plotly_chart(fig3)
