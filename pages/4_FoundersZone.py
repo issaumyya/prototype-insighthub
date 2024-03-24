@@ -86,3 +86,53 @@ fig2.update_layout(
         showlegend = False
 )
 st.plotly_chart(fig2,use_container_width=True, height = 150)
+import pandas as pd
+from streamlit import st
+import plotly.graph_objects as go
+
+# Data (replace with your actual data if needed)
+data1 = {
+    'Sector': [
+        'Fintech', 'Fintech', 'Fintech', 'Fintech', 'Fintech', 'Fintech',
+        'Ecommerce', 'Ecommerce', 'Ecommerce', 'Ecommerce',
+        'Edtech', 'Edtech', 'Edtech', 'Edtech', 'Edtech', 'Edtech',
+        'Deeptech', 'Deeptech', 'Deeptech', 'Deeptech', 'Deeptech'
+    ],
+    'Subsector': [
+        'Lending Tech', 'Banking', 'Fintech SaaS', 'Insurtech', 'Investment Tech', 'Others',
+        'D2C', 'B2B', 'C2B', 'Others',
+        'Skill Development', 'Test Prep', 'Online Discovery', 'Online Certification', 'Edtech SaaS', 'Others',
+        'RPA', 'Spacetech', 'Hardware & IoT', 'Dronetech', 'Others'
+    ],
+    'Value': [
+        1185, 971, 348, 314, 107, 96,
+        1415, 448, 682, 91,
+        72, 64, 55, 45, 43, 5,
+        147, 124, 123, 29, 9
+    ]
+}
+
+# Create a Pandas DataFrame from the data
+df4 = pd.DataFrame(data1)
+
+# Calculate parent sector size (assuming all subsectors belong to their respective sectors)
+parent_sizes = df4.groupby('Sector')['Value'].sum()
+
+# Create the treemap with Plotly
+fig3 = go.Figure(go.Treemap(
+    parents=df4['Sector'],  # Define parents for each subsector
+    labels=df4['Subsector'],  # Set subsector names as labels
+    values=df4['Value'],     # Set subsector values
+    branchvalues='total'  # Calculate size based on subsector values
+))
+
+# Set parent node sizes based on total subsector values for each sector
+fig3.update_layout(
+    margin=go.layout.Margin(t=50, l=25, r=25, b=25),
+    title_text='Investment Distribution by Sector & Subsector')
+
+# Set colors for better visualization (optional)
+fig3.update_traces(marker_colorcale='Viridis')
+
+# Display the treemap in Streamlit
+st.plotly_chart(fig3)
