@@ -34,5 +34,4 @@ fig.update_layout(
 )
 
 fig.update_layout(xaxis=dict(tickmode="linear"), bargap=0.1)
-
-fig.show()
+st.plotly_chart(fig)
