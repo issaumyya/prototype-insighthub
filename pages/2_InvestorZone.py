@@ -118,7 +118,7 @@ df3 = pd.DataFrame({
 })
 
 # Area chart with Plotly Express
-fig = px.area(
+fig1 = px.area(
   df3,
   x="Year",
   y=["Bengaluru", "Delhi", "Mumbai"],  # List of columns for area lines
@@ -127,4 +127,4 @@ fig = px.area(
 )
 
 # Display the chart (optional, for standalone usage)
-st.plotly_chart(fig)
+st.plotly_chart(fig1)
