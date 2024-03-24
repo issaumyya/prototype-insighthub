@@ -114,16 +114,14 @@ df4 = pd.DataFrame(data1)
 parent_sizes = df4.groupby('Sector')['Value'].sum()
 
 # Create the treemap with Plotly
-fig3 = go.Figure(go.Treemap(
+fig4 = go.Figure(go.Treemap(
     parents=df4['Sector'],  # Define parents for each subsector
     labels=df4['Subsector'],  # Set subsector names as labels
     values=df4['Value'],  # Set subsector values
-    branchvalues=parent_sizes  # Calculate size based on subsector values
+    branchvalues='total'  # Calculate size based on subsector values
 ))
 
-fig3.update_layout(
+fig4.update_layout(
     margin=go.layout.Margin(t=50, l=25, r=25, b=25),
     title_text='Funding Amount (in Mn) by Sector')
-
-fig3.update_traces(root_color="lightgrey")
-st.plotly_chart(fig3)
+st.plotly_chart(fig4)
