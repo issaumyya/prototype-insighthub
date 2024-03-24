@@ -3,8 +3,6 @@ import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 
-# Load data
-df1 = pd.read_csv("clean_startup_data.csv")
 years = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"]
 funding_amount_raised = [5.4, 9.3, 5.6, 13, 11.9, 12, 12, 42, 25]
 no_of_deals = [378, 985, 1049, 999, 833, 810, 953, 1584, 1519]
