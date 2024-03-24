@@ -5,6 +5,23 @@ import plotly.graph_objects as go
 
 data = pd.read_csv("StartupIndiaStats.csv")
 df1 = pd.read_csv("unicorns100.csv")
+textbox_style = """
+    <style>
+        .textbox {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #076D90;
+            text-align: center;
+        }
+        .textbox h3{
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+        }
+    </style>
+"""
 # Create initial columns with desired ratio (3:1:1)
 col1, col2 = st.columns((2))
 # Create a container within the first column
@@ -24,7 +41,8 @@ with col2:
 
   pie_fig.update_layout(showlegend=False)
   st.plotly_chart(pie_fig,use_container_width=True, height = 150)
-  st.text("Fintech is the most likely sector to generate Future Unicorns in India")
+  st.markdown(textbox_style, unsafe_allow_html=True)
+  st.markdown(f"<div class='textbox'><h3>✅ Fintech is the most likely sector to generate future unicorns in India<h3></div>", unsafe_allow_html=True)
 def create_state_distribution(data, filter_by, top_value):
   filtered_data = data.nlargest(top_value, filter_by)  # Filter top states
   fig = px.bar(filtered_data, x="State", y=filter_by, title=f"Top {top_value} States by {filter_by.capitalize()}")
@@ -45,23 +63,6 @@ with col1:
     st.plotly_chart(incubator_graph,use_container_width=True, height = 150)
   else:
     st.write("Please select a filter from the sidebar.")
-  textbox_style = """
-    <style>
-        .textbox {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            color: #076D90;
-            text-align: center;
-        }
-        .textbox h3{
-            font-size: 18px;
-            font-weight: bold;
-            margin: 0;
-        }
-    </style>
-"""
   st.markdown(textbox_style, unsafe_allow_html=True)
   st.markdown(f"<div class='textbox'><h3>✅ Revenue Growth is the key metric to focus for early stage startups<h3></div>", unsafe_allow_html=True)
 
