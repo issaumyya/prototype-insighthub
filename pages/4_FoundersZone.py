@@ -8,8 +8,9 @@ df1 = pd.read_csv("unicorns100.csv")
 # Create initial columns with desired ratio (3:1:1)
 col1, col2 = st.columns((2))
 # Create a container within the first column
-with col2:
+with col1:
   top_states_slider = st.slider("Number of Top States", min_value=1, max_value=10, value=5)
+with col2:
   filter_by_select = st.selectbox("Filter By", ["Startups", "Accelerators", "Incubators"])
 with col1: 
   def create_state_distribution(data, filter_by, top_value):
