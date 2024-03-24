@@ -42,13 +42,13 @@ with col1:
   selected_filter = filter_by_select
   if selected_filter == "Startups":
     startup_graph = create_state_distribution(data.copy(), "Startups", top_states_slider)
-    st.plotly_chart(startup_graph)
+    st.plotly_chart(startup_graph,use_container_width=True, height = 150)
   elif selected_filter == "Accelerators":
     accelerator_graph = create_state_distribution(data.copy(), "Accelerators", top_states_slider)
-    st.plotly_chart(accelerator_graph)
+    st.plotly_chart(accelerator_graph,use_container_width=True, height = 150)
   elif selected_filter == "Incubators":
     incubator_graph = create_state_distribution(data.copy(), "Incubators", top_states_slider)
-    st.plotly_chart(incubator_graph)
+    st.plotly_chart(incubator_graph,use_container_width=True, height = 150)
   else:
     st.write("Please select a filter from the sidebar.")
 
@@ -63,13 +63,13 @@ with col1:
     title='Soonicorn Distribution by Sector')
 
   pie_fig.update_layout(showlegend=False)
-  st.plotly_chart(pie_fig)
+  st.plotly_chart(pie_fig,use_container_width=True, height = 150)
   
 st.text("Fintech is the most likely sector to generate Future Unicorns in India")
 sectors = ["Upto 2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"]
 no_of_unicorns = [4,3,3,2,1,10,7,12,45,22,2]
 uni_fig = px.bar(x=sectors, y=no_of_unicorns)
-st.plotly_chart(uni_fig)
+st.plotly_chart(uni_fig,use_container_width=True, height = 150)
 st.text("Only 2 Unicorns were Minted in 2023, a decline by 91% from last year")
 
 import plotly.graph_objects as go
@@ -85,4 +85,4 @@ fig2.update_layout(
         title = "Number of Investors Backing Indian Startups",
         showlegend = False
 )
-st.plotly_chart(fig2)
+st.plotly_chart(fig2,use_container_width=True, height = 150)
