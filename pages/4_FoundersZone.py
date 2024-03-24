@@ -74,19 +74,17 @@ st.text("Only 2 Unicorns were Minted in 2023, a decline by 91% from last year")
 
 import plotly.graph_objects as go
 
-fig = go.Figure(go.Waterfall(
+fig2 = go.Figure(go.Waterfall(
     name = "20", orientation = "v",
     measure = ["absolute", "relative", "relative", "relative", "relative", "relative", "relative", "relative", "relative", "relative"],
     x = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"],
-    textposition = "outside",
-    text = ["+60", "+80", "", "-40", "-20", "Total"],
-    y = [60, 80, 0, -40, -20, 0],
+    y = [363, 1012, 1277, 1192, 993, 892, 1114, 2487, 2416, 1557],
     connector = {"line":{"color":"rgb(63, 63, 63)"}},
 ))
 
-fig.update_layout(
-        title = "Profit and loss statement 2018",
+fig2.update_layout(
+        title = "Number of Investors Backing Indian Startups",
         showlegend = True
 )
 
-fig.show()
+st.plotly_chart(fig2)
