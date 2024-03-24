@@ -40,7 +40,7 @@ with col2:
     title='Soonicorn Distribution by Sector')
 
   pie_fig.update_layout(showlegend=False)
-  st.plotly_chart(pie_fig,use_container_width=True, height = 150)
+  st.plotly_chart(pie_fig,use_container_width=True, height = 120)
   st.markdown(textbox_style, unsafe_allow_html=True)
   st.markdown(f"<div class='textbox'><h3>✅ Fintech is the most likely sector to generate future unicorns in India<h3></div>", unsafe_allow_html=True)
 def create_state_distribution(data, filter_by, top_value):
