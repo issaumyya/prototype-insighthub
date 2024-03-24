@@ -2,6 +2,7 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 
 years = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"]
 funding_amount_raised = [5.4, 9.3, 5.6, 13, 11.9, 12, 12, 42, 25]
