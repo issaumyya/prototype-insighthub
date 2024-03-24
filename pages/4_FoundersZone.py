@@ -25,15 +25,15 @@ with col2:
             color: #ffffff;
             text-align: center;
         }
-        .textbox {
-            font-size: 32px;
+        .textbox h3{
+            font-size: 12px;
             font-weight: bold;
             margin: 0;
         }
     </style>
 """
   st.markdown(textbox_style, unsafe_allow_html=True)
-  st.markdown(f"<div class='textbox'>Revenue Growthis the key metric to focus for early stage startups</div>", unsafe_allow_html=True)
+  st.markdown(f"<div class='textbox'><h3>Revenue Growthis the key metric to focus for early stage startups<h3></div>", unsafe_allow_html=True)
 with col1: 
   def create_state_distribution(data, filter_by, top_value):
     filtered_data = data.nlargest(top_value, filter_by)  # Filter top states
