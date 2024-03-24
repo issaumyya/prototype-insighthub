@@ -16,13 +16,12 @@ with col1:
     max_value = filtered_data[filter_by].max()
     #fig.update_traces(marker=dict(color=st.colors.green), selector=max(fig.data, key='y'))  # Highlight max
     fig.update_yaxes(range=[0, max_value * 1.2])
-    fig.update_layout(width=200, height=450)
+    #fig.update_layout(width=200, height=450)
     return fig
    
   top_states_slider = st.sidebar.slider("Number of Top States", min_value=1, max_value=10, value=5)
   filter_by_select = st.sidebar.selectbox("Filter By", ["Startups", "Accelerators", "Incubators"])
   selected_filter = filter_by_select
-with col1:
   if selected_filter == "Startups":
     startup_graph = create_state_distribution(data.copy(), "Startups", top_states_slider)
     st.plotly_chart(startup_graph)
@@ -45,5 +44,4 @@ with col2:
     hole=.4,  # Adjust the hole size for a donut chart (0 for regular pie)
     title='Soonicorn Distribution by Sector'
 )
-  pie_fig.update_layout(width=200, height=200)
   st.plotly_chart(pie_fig)
