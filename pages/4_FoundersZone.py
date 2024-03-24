@@ -127,8 +127,5 @@ fig3.update_layout(
     margin=go.layout.Margin(t=50, l=25, r=25, b=25),
     title_text='Investment Distribution by Sector & Subsector')
 
-# Set colors for better visualization (optional)
-fig3.update_traces(marker_colorcale='Viridis')
-
 # Display the treemap in Streamlit
 st.plotly_chart(fig3)
