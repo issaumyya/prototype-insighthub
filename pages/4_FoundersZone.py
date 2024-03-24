@@ -8,6 +8,9 @@ df1 = pd.read_csv("unicorns100.csv")
 # Create initial columns with desired ratio (3:1:1)
 col1, col2 = st.columns((2))
 # Create a container within the first column
+with col2:
+  top_states_slider = st.slider("Number of Top States", min_value=1, max_value=10, value=5)
+  filter_by_select = st.selectbox("Filter By", ["Startups", "Accelerators", "Incubators"])
 with col1: 
   def create_state_distribution(data, filter_by, top_value):
     filtered_data = data.nlargest(top_value, filter_by)  # Filter top states
@@ -18,9 +21,6 @@ with col1:
     fig.update_yaxes(range=[0, max_value * 1.2])
     #fig.update_layout(width=200, height=450)
     return fig
-   
-  top_states_slider = st.sidebar.slider("Number of Top States", min_value=1, max_value=10, value=5)
-  filter_by_select = st.sidebar.selectbox("Filter By", ["Startups", "Accelerators", "Incubators"])
   selected_filter = filter_by_select
   if selected_filter == "Startups":
     startup_graph = create_state_distribution(data.copy(), "Startups", top_states_slider)
