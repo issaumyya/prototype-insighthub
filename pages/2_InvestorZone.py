@@ -61,5 +61,5 @@ fig = px.bar(data1, y="Sector Name", x=selected_x_axis_value, title="Investment 
 # Update layout for better readability (optional)
 fig.update_layout(xaxis_title=selected_x_axis, yaxis_title="Sector Name")
 fig.update_traces(textposition="outside")  # Display data point values outside bars
-
+fig.update_layout(showlegend=False)
 st.plotly_chart(fig)
