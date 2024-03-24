@@ -39,3 +39,27 @@ fig.update_layout(
 
 fig.update_layout(xaxis=dict(tickmode="linear"), bargap=0.1)
 st.plotly_chart(fig)
+
+sector_name = ["Ecommerce", "Enterprisetech", "Fintech", "Deeptech", "Healthtech", "Cleantech", "Edtech", "Media & Entertainment", "Consumer Services", "Logistics"]
+funding_amount_raised = [3.02, 2.6, 1.3, 0.86, 0.50, 0.39, 0.37, 0.28, 0.28, 0.23]
+no_of_deals = [192, 157, 129, 61, 57, 57, 47, 44, 39, 32]
+# Create a DataFrame from lists
+data1 = pd.DataFrame({
+    "Sector Name": sector_name,
+    "Funding Amount ($ Bn)": funding_amount_raised,
+    "Number of Deals": no_of_deals
+})
+
+# Filter selection for x-axis
+x_axis_options = {"Funding Amount ($ Bn)": "Funding Amount ($ Bn)", "Number of Deals": "Number of Deals"}
+selected_x_axis = st.sidebar.selectbox("Choose X-Axis", options=list(x_axis_options.keys()), index=0)
+selected_x_axis_value = x_axis_options[selected_x_axis]
+
+# Create the bar graph
+fig = px.bar(data1, y="Sector Name", x=selected_x_axis_value, title="Investment by Sector", color="Sector Name", barmode="group")
+
+# Update layout for better readability (optional)
+fig.update_layout(xaxis_title=selected_x_axis, yaxis_title="Sector Name")
+fig.update_traces(textposition="outside")  # Display data point values outside bars
+
+st.plotly_chart(fig)
