@@ -31,9 +31,6 @@ fig.add_trace(go.Scatter(
 
 fig.update_layout(
     title="Double Axis Graph (Bar & Line)",
-    xaxis_title="Timeline",
-    yaxis_title="Funding Amount ($ Bn)",
-    yaxis2_title="Deal Count",
     xaxis_showgrid=False,  # Remove x-axis grid lines
     yaxis_showgrid=False,  # Remove y-axis grid lines
     xaxis_zeroline=False,  # Remove zero line for x-axis
