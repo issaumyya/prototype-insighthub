@@ -86,11 +86,8 @@ fig2.update_layout(
         showlegend = False
 )
 st.plotly_chart(fig2,use_container_width=True, height = 150)
-import pandas as pd
-from streamlit import st
-import plotly.graph_objects as go
 
-# Data (replace with your actual data if needed)
+#treemap
 data1 = {
     'Sector': [
         'Fintech', 'Fintech', 'Fintech', 'Fintech', 'Fintech', 'Fintech',
@@ -112,7 +109,6 @@ data1 = {
     ]
 }
 
-# Create a Pandas DataFrame from the data
 df4 = pd.DataFrame(data1)
 
 # Calculate parent sector size (assuming all subsectors belong to their respective sectors)
