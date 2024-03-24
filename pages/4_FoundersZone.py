@@ -76,9 +76,9 @@ import plotly.graph_objects as go
 
 fig2 = go.Figure(go.Waterfall(
     name = "20", orientation = "v",
-    measure = ["absolute", "absolute", "absolute", "absolute", "absolute", "absolute", "absolute", "absolute","absolute", "absolute"],
+    measure = ["absolute","relative","relative","relative","relative","relative","relative","relative","relative","relative"],
     x = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"],
-    y = [363, 1012, 1277, 1192, 993, 892, 1114, 2487, 2416, 1557],
+    y = [363, 649, 265, -85, -199, -101, 222, 1373, -71, -859],
     connector = {"line":{"color":"rgb(63, 63, 63)"}},
 ))
 
