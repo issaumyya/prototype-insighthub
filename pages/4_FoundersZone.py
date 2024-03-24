@@ -42,5 +42,6 @@ with col1:
     values='Soonicorns',  # Use 'Soonicorns' for pie slice values
     hole=.4,  # Adjust the hole size for a donut chart (0 for regular pie)
     title='Soonicorn Distribution by Sector')
+  st.text("Fintech is the most likely sector to generate Future Unicorns in India")
   pie_fig.update_layout(showlegend=False)
   st.plotly_chart(pie_fig)
