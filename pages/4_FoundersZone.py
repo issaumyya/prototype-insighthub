@@ -110,18 +110,14 @@ data1 = {
 }
 
 df4 = pd.DataFrame(data1)
+fig3 = px.treemap(
+  df4,  # Data source (DataFrame)
+  path=[df4['Sector'], df4['Subsector']],  # Path for hierarchical levels (Sector, Subsector)
+  values='Value',  # Values for size representation
+  color='Sector',  # Optional color by sector (categorical coloring)
+  title='Funding Amount (in Mn) by Sector'  # Treemap title
+)
 
-parent_sizes = df4.groupby('Sector')['Value'].sum()
+# Display the treemap in Streamlit
+st.plotly_chart(fig3)
 
-# Create the treemap with Plotly
-fig4 = go.Figure(go.Treemap(
-    parents=df4['Sector'],  # Define parents for each subsector
-    names=df4['Subsector'],  # Set subsector names as labels
-    values=df4['Value'],  # Set subsector values
-    branchvalues='total'  # Calculate size based on subsector values
-))
-
-fig4.update_layout(
-    margin=go.layout.Margin(t=50, l=25, r=25, b=25),
-    title_text='Funding Amount (in Mn) by Sector')
-st.plotly_chart(fig4)
