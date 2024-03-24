@@ -30,7 +30,7 @@ with col2:
     </style>
 """
   st.markdown(textbox_style, unsafe_allow_html=True)
-  st.markdown(f"<div class='textbox'><h3>Revenue Growth is the key metric to focus for early stage startups<h3></div>", unsafe_allow_html=True)
+  st.markdown(f"<div class='textbox'><h3>✅Revenue Growth is the key metric to focus for early stage startups<h3></div>", unsafe_allow_html=True)
 def create_state_distribution(data, filter_by, top_value):
   filtered_data = data.nlargest(top_value, filter_by)  # Filter top states
   fig = px.bar(filtered_data, x="State", y=filter_by, title=f"Top {top_value} States by {filter_by.capitalize()}")
