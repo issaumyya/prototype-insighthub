@@ -12,25 +12,6 @@ with col1:
   top_states_slider = st.slider("Number of Top States", min_value=1, max_value=10, value=5)
 with col2:
   filter_by_select = st.selectbox("Filter By", ["Startups", "Accelerators", "Incubators"])
-  textbox_style = """
-    <style>
-        .textbox {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            color: #076D90;
-            text-align: center;
-        }
-        .textbox h3{
-            font-size: 18px;
-            font-weight: bold;
-            margin: 0;
-        }
-    </style>
-"""
-  st.markdown(textbox_style, unsafe_allow_html=True)
-  st.markdown(f"<div class='textbox'><h3>✅ Revenue Growth is the key metric to focus for early stage startups<h3></div>", unsafe_allow_html=True)
   sectors = ["Fintech", "Ecommerce", "Enterprisetech", "Media & Entertainment", "Edtech", "Traveltech", "Others"]
   soonicorns = [37, 18, 17, 7, 7, 7, 22]
   df2 = pd.DataFrame({"Sectors":sectors, "Soonicorns":soonicorns})
@@ -64,7 +45,25 @@ with col1:
     st.plotly_chart(incubator_graph,use_container_width=True, height = 150)
   else:
     st.write("Please select a filter from the sidebar.")
-
+  textbox_style = """
+    <style>
+        .textbox {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #076D90;
+            text-align: center;
+        }
+        .textbox h3{
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+        }
+    </style>
+"""
+  st.markdown(textbox_style, unsafe_allow_html=True)
+  st.markdown(f"<div class='textbox'><h3>✅ Revenue Growth is the key metric to focus for early stage startups<h3></div>", unsafe_allow_html=True)
 
 sectors = ["Upto 2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"]
 no_of_unicorns = [4,3,3,2,1,10,7,12,45,22,2]
