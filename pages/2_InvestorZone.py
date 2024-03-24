@@ -12,7 +12,7 @@ no_of_deals = [212, 179, 278, 284, 308, 313, 465, 498, 506, 394, 334, 283, 229, 
 data = pd.DataFrame({"Timeline": years, "Funding Amount": funding_amount_raised, "Deal Count": no_of_deals})
 
 # Filter year based on Streamlit sidebar selection
-selected_year = st.sidebar.selectbox("Timeline", data["Timeline"].unique())
+selected_years = st.sidebar.multiselect("Timeline", data["Timeline"].unique(), default=data["Timeline"].unique())
 filtered_data = data[data["Timeline"] == selected_year]
 
 # Create a figure with two y-axes
