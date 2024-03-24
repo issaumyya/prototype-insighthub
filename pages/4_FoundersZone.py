@@ -38,5 +38,11 @@ with col2:
   sectors = ["Fintech", "Ecommerce", "Enterprisetech", "Media & Entertainment", "Edtech", "Traveltech", "Others"]
   soonicorns = [37, 18, 17, 7, 7, 7, 22]
   df2 = pd.DataFrame({"Sectors":sectors, "Soonicorns":soonicorns})
-  pie_fig = px.pie(data_frame=df2, names='Sectors', title='Soonicorn Distribution')
+  pie_fig = px.pie(
+    data_frame=df2,
+    names='Sectors',
+    values='Soonicorns',  # Use 'Soonicorns' for pie slice values
+    hole=.4,  # Adjust the hole size for a donut chart (0 for regular pie)
+    title='Soonicorn Distribution by Sector'
+)
   st.plotly_chart(pie_fig,use_container_width=True, height = 150)
