@@ -33,7 +33,6 @@ with col1:
     st.plotly_chart(incubator_graph)
   else:
     st.write("Please select a filter from the sidebar.")
-with col2:
   sectors = ["Fintech", "Ecommerce", "Enterprisetech", "Media & Entertainment", "Edtech", "Traveltech", "Others"]
   soonicorns = [37, 18, 17, 7, 7, 7, 22]
   df2 = pd.DataFrame({"Sectors":sectors, "Soonicorns":soonicorns})
@@ -42,7 +41,6 @@ with col2:
     names='Sectors',
     values='Soonicorns',  # Use 'Soonicorns' for pie slice values
     hole=.4,  # Adjust the hole size for a donut chart (0 for regular pie)
-    title='Soonicorn Distribution by Sector'
-)
+    title='Soonicorn Distribution by Sector')
   pie_fig.update_layout(showlegend=False)
   st.plotly_chart(pie_fig)
