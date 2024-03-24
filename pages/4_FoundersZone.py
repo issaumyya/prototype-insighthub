@@ -50,3 +50,5 @@ with col1:
 st.text("Fintech is the most likely sector to generate Future Unicorns in India")
 sectors = ["Upto 2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"]
 no_of_unicorns = [4,3,3,2,1,10,7,12,45,22,2]
+uni_fig = px.bar(x=sectors, y=no_of_unicorns)
+st.text("Only 2 Unicorns were Minted in 2023, a decline by 91% from last year")
