@@ -75,7 +75,6 @@ st.text("Only 2 Unicorns were Minted in 2023, a decline by 91% from last year")
 import plotly.graph_objects as go
 
 fig2 = go.Figure(go.Waterfall(
-    name = "20", orientation = "v",
     measure = ["relative", "relative", "relative", "relative", "relative", "relative","relative","relative","relative","relative"],
     x = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"],
     y = [363, 649, 265, -85, -199, -101, 222, 1373, -71, -859],
