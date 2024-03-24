@@ -37,6 +37,6 @@ with col1:
 with col2:
   sectors = ["Fintech", "Ecommerce", "Enterprisetech", "Media & Entertainment", "Edtech", "Traveltech", "Others"]
   soonicorns = [37, 18, 17, 7, 7, 7, 22]
-  df2 = ["Sectors":sectors, "Soonicorns":soonicorns]
+  df2 = pd.DataFrame({"Sectors":sectors, "Soonicorns":soonicorns})
   pie_fig = px.pie(data_frame=df2, names='Sectors', title='Soonicorn Distribution')
   st.plotly_chart(pie_fig,use_container_width=True, height = 150)
