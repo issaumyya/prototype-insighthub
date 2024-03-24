@@ -118,7 +118,7 @@ fig3 = go.Figure(go.Treemap(
     parents=df4['Sector'],  # Define parents for each subsector
     labels=df4['Subsector'],  # Set subsector names as labels
     values=df4['Value'],  # Set subsector values
-    branchvalues='total'  # Calculate size based on subsector values
+    branchvalues=parent_sizes  # Calculate size based on subsector values
 ))
 
 fig3.update_layout(
