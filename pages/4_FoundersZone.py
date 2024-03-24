@@ -31,6 +31,19 @@ with col2:
 """
   st.markdown(textbox_style, unsafe_allow_html=True)
   st.markdown(f"<div class='textbox'><h3>✅ Revenue Growth is the key metric to focus for early stage startups<h3></div>", unsafe_allow_html=True)
+  sectors = ["Fintech", "Ecommerce", "Enterprisetech", "Media & Entertainment", "Edtech", "Traveltech", "Others"]
+  soonicorns = [37, 18, 17, 7, 7, 7, 22]
+  df2 = pd.DataFrame({"Sectors":sectors, "Soonicorns":soonicorns})
+  pie_fig = px.pie(
+    data_frame=df2,
+    names='Sectors',
+    values='Soonicorns',  # Use 'Soonicorns' for pie slice values
+    hole=.4,  # Adjust the hole size for a donut chart (0 for regular pie)
+    title='Soonicorn Distribution by Sector')
+
+  pie_fig.update_layout(showlegend=False)
+  st.plotly_chart(pie_fig,use_container_width=True, height = 150)
+  st.text("Fintech is the most likely sector to generate Future Unicorns in India")
 def create_state_distribution(data, filter_by, top_value):
   filtered_data = data.nlargest(top_value, filter_by)  # Filter top states
   fig = px.bar(filtered_data, x="State", y=filter_by, title=f"Top {top_value} States by {filter_by.capitalize()}")
@@ -52,20 +65,7 @@ with col1:
   else:
     st.write("Please select a filter from the sidebar.")
 
-  sectors = ["Fintech", "Ecommerce", "Enterprisetech", "Media & Entertainment", "Edtech", "Traveltech", "Others"]
-  soonicorns = [37, 18, 17, 7, 7, 7, 22]
-  df2 = pd.DataFrame({"Sectors":sectors, "Soonicorns":soonicorns})
-  pie_fig = px.pie(
-    data_frame=df2,
-    names='Sectors',
-    values='Soonicorns',  # Use 'Soonicorns' for pie slice values
-    hole=.4,  # Adjust the hole size for a donut chart (0 for regular pie)
-    title='Soonicorn Distribution by Sector')
 
-  pie_fig.update_layout(showlegend=False)
-  st.plotly_chart(pie_fig,use_container_width=True, height = 150)
-  
-st.text("Fintech is the most likely sector to generate Future Unicorns in India")
 sectors = ["Upto 2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"]
 no_of_unicorns = [4,3,3,2,1,10,7,12,45,22,2]
 uni_fig = px.bar(x=sectors, y=no_of_unicorns)
