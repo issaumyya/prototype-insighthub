@@ -122,5 +122,5 @@ with col1:
         values='Value',  
         color='Sector', 
         title='Funding Amount (in Mn) by Sector')
-    st.plotly_chart(fig3, use_container_width=True, height = 150)
+    st.plotly_chart(fig3, use_container_width=True, height = 350)
 
