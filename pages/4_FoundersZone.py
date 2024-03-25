@@ -57,6 +57,8 @@ with col1, col2:
 
 
 with col1:
+  st.markdown(textbox_style, unsafe_allow_html=True)
+  st.markdown(f"<div class='textbox'><h3>India is the 3rd Largest Startup Ecosystem in the world, with 112 in the Unicorn Club!<h3></div>", unsafe_allow_html=True)
   sectors = ["Fintech", "Ecommerce", "Enterprisetech", "Media & Entertainment", "Edtech", "Traveltech", "Others"]
   soonicorns = [37, 18, 17, 7, 7, 7, 22]
   df2 = pd.DataFrame({"Sectors":sectors, "Soonicorns":soonicorns})
