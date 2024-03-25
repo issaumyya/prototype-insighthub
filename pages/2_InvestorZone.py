@@ -62,7 +62,6 @@ selected_x_axis_value = x_axis_options[selected_x_axis]
 fig = px.bar(data1, y="Sector Name", x=selected_x_axis_value, title="Investment by Sector", color="Sector Name", barmode="group")
 
 # Update layout for better readability (optional)
-fig.update_layout(xaxis_title=selected_x_axis, yaxis_title="Sector Name")
 fig.update_traces(textposition="outside")  # Display data point values outside bars
 fig.update_layout(showlegend=False)
 with col2:
