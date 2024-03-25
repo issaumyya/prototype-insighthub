@@ -9,7 +9,6 @@ textbox_style = """
     <style>
         .textbox {
             background: rgba(255, 255, 255, 0.1);
-            padding: 2px;
             border-radius: 15px;
             border: 1px solid rgba(255, 255, 255, 0.18);
             color: #076D90;
