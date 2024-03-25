@@ -40,7 +40,7 @@ fig.update_layout(
 fig.update_layout(xaxis=dict(tickmode="linear"), bargap=0.1)
 fig.update_layout(legend=dict(orientation="h", x=0, y=1.5))
 with col1:
-        st.plotly_chart(fig)
+        st.plotly_chart(fig,use_container_width=True, height = 170)
 
 sector_name = ["Ecommerce", "Enterprisetech", "Fintech", "Deeptech", "Healthtech", "Cleantech", "Edtech", "Media & Entertainment", "Consumer Services", "Logistics"]
 funding_amount_raised = [3.02, 2.6, 1.3, 0.86, 0.50, 0.39, 0.37, 0.28, 0.28, 0.23]
@@ -72,7 +72,7 @@ fig.update_layout(
     yaxis_zeroline=False
 )
 with col1:
-        st.plotly_chart(fig)
+        st.plotly_chart(fig,use_container_width=True, height = 170)
 
 late_stage_data = pd.DataFrame({
   "sectors": ["Fintech", "Ecommerce", "Enterprisetech", "Cleantech", "Consumer Services", "Deeptech", "Others"],
@@ -138,4 +138,4 @@ fig1 = px.area(
 
 # Display the chart (optional, for standalone usage)
 with col2:
-        st.plotly_chart(fig1)
+        st.plotly_chart(fig1,use_container_width=True, height = 170)
