@@ -71,7 +71,7 @@ fig.update_layout(
     xaxis_zeroline=False,  # Remove zero line for x-axis
     yaxis_zeroline=False
 )
-with col2:
+with col1:
         st.plotly_chart(fig)
 
 late_stage_data = pd.DataFrame({
@@ -137,4 +137,5 @@ fig1 = px.area(
 )
 
 # Display the chart (optional, for standalone usage)
-st.plotly_chart(fig1)
+with col2:
+        st.plotly_chart(fig1)
