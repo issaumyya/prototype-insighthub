@@ -64,6 +64,13 @@ fig = px.bar(data1, y="Sector Name", x=selected_x_axis_value, title="Investment 
 # Update layout for better readability (optional)
 fig.update_traces(textposition="outside")  # Display data point values outside bars
 fig.update_layout(showlegend=False)
+fig.update_layout(
+    title="Double Axis Graph (Bar & Line)",
+    xaxis_showgrid=False,  # Remove x-axis grid lines
+    yaxis_showgrid=False,  # Remove y-axis grid lines
+    xaxis_zeroline=False,  # Remove zero line for x-axis
+    yaxis_zeroline=False
+)
 with col2:
         st.plotly_chart(fig)
 
