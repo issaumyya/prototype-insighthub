@@ -43,13 +43,13 @@ selected_filter = filter_by_select
 with col1, col2:
     if selected_filter == "Startups":
         startup_graph = create_state_distribution(data.copy(), "Startups", top_states_slider)
-        st.plotly_chart(startup_graph,use_container_width=True, height = 150)
+        st.plotly_chart(startup_graph,use_container_width=True, height = 170)
     elif selected_filter == "Accelerators":
         accelerator_graph = create_state_distribution(data.copy(), "Accelerators", top_states_slider)
-        st.plotly_chart(accelerator_graph,use_container_width=True, height = 150)
+        st.plotly_chart(accelerator_graph,use_container_width=True, height = 170)
     elif selected_filter == "Incubators":
         incubator_graph = create_state_distribution(data.copy(), "Incubators", top_states_slider)
-        st.plotly_chart(incubator_graph,use_container_width=True, height = 150)
+        st.plotly_chart(incubator_graph,use_container_width=True, height = 170)
     else:
         st.write("Please select a filter from the sidebar.")
     st.markdown(textbox_style, unsafe_allow_html=True)
@@ -66,7 +66,7 @@ with col1:
     data_frame=df2,
     names='Sectors',
     values='Soonicorns',  # Use 'Soonicorns' for pie slice values
-    hole=.2,  # Adjust the hole size for a donut chart (0 for regular pie)
+    hole=.4,  # Adjust the hole size for a donut chart (0 for regular pie)
     title='Soonicorn Distribution by Sector')
 
   pie_fig.update_layout(showlegend=False)
