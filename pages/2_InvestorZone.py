@@ -8,7 +8,7 @@ years = ["Q1-2020", "Q2-2020", "Q3-2020", "Q4-2020", "Q1-2021", "Q2-2021", "Q3-2
         "Q2-2022", "Q3-2022", "Q4-2022","Q1-2023", "Q2-2023", "Q3-2023", "Q4-2023 (Till Nov.)"]
 funding_amount_raised = [4, 1, 3, 4, 4, 6, 17, 15, 12, 7, 3, 3, 2.9, 2.5, 1.7, 1.6]
 no_of_deals = [212, 179, 278, 284, 308, 313, 465, 498, 506, 394, 334, 283, 229, 241, 221, 138]
-
+col1, col2 = st.columns((2))
 data = pd.DataFrame({"Timeline": years, "Funding Amount": funding_amount_raised, "Deal Count": no_of_deals})
 
 # Create a figure with two y-axes
@@ -38,7 +38,8 @@ fig.update_layout(
 )
 
 fig.update_layout(xaxis=dict(tickmode="linear"), bargap=0.1)
-st.plotly_chart(fig)
+with col1:
+        st.plotly_chart(fig)
 
 sector_name = ["Ecommerce", "Enterprisetech", "Fintech", "Deeptech", "Healthtech", "Cleantech", "Edtech", "Media & Entertainment", "Consumer Services", "Logistics"]
 funding_amount_raised = [3.02, 2.6, 1.3, 0.86, 0.50, 0.39, 0.37, 0.28, 0.28, 0.23]
@@ -52,7 +53,8 @@ data1 = pd.DataFrame({
 
 # Filter selection for x-axis
 x_axis_options = {"Funding Amount ($ Bn)": "Funding Amount ($ Bn)", "Number of Deals": "Number of Deals"}
-selected_x_axis = st.selectbox("Choose X-Axis", options=list(x_axis_options.keys()), index=0)
+with col2:
+        selected_x_axis = st.selectbox("Choose X-Axis", options=list(x_axis_options.keys()), index=0)
 selected_x_axis_value = x_axis_options[selected_x_axis]
 
 # Create the bar graph
@@ -62,7 +64,8 @@ fig = px.bar(data1, y="Sector Name", x=selected_x_axis_value, title="Investment 
 fig.update_layout(xaxis_title=selected_x_axis, yaxis_title="Sector Name")
 fig.update_traces(textposition="outside")  # Display data point values outside bars
 fig.update_layout(showlegend=False)
-st.plotly_chart(fig)
+with col2:
+        st.plotly_chart(fig)
 
 late_stage_data = pd.DataFrame({
   "sectors": ["Fintech", "Ecommerce", "Enterprisetech", "Cleantech", "Consumer Services", "Deeptech", "Others"],
