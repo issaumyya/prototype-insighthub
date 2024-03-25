@@ -117,6 +117,6 @@ with col1:
         path=[df4['Sector'], df4['Subsector']],  # Path for hierarchical levels (Sector, Subsector)
         values='Value',  
         color='Sector', 
-        title='Funding Amount (in Mn) by Sector'  # Treemap title)
+        title='Funding Amount (in Mn) by Sector')
     st.plotly_chart(fig3)
 
