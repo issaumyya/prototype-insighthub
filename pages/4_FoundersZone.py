@@ -29,7 +29,6 @@ with col1:
   top_states_slider = st.slider("Number of Top States", min_value=1, max_value=10, value=5)
 with col2:
      filter_by_select = st.selectbox("Filter By", ["Startups", "Accelerators", "Incubators"])
-    
 def create_state_distribution(data, filter_by, top_value):
   filtered_data = data.nlargest(top_value, filter_by)  # Filter top states
   fig = px.bar(filtered_data, x="State", y=filter_by, title=f"Top {top_value} States by {filter_by.capitalize()}")
@@ -38,19 +37,22 @@ def create_state_distribution(data, filter_by, top_value):
   fig.update_yaxes(range=[0, max_value * 1.2])
   return fig
 selected_filter = filter_by_select
-if selected_filter == "Startups":
-    startup_graph = create_state_distribution(data.copy(), "Startups", top_states_slider)
-    st.plotly_chart(startup_graph,use_container_width=True, height = 150)
-elif selected_filter == "Accelerators":
-    accelerator_graph = create_state_distribution(data.copy(), "Accelerators", top_states_slider)
-    st.plotly_chart(accelerator_graph,use_container_width=True, height = 150)
-elif selected_filter == "Incubators":
-    incubator_graph = create_state_distribution(data.copy(), "Incubators", top_states_slider)
-    st.plotly_chart(incubator_graph,use_container_width=True, height = 150)
-else:
-    st.write("Please select a filter from the sidebar.")
-st.markdown(textbox_style, unsafe_allow_html=True)
-st.markdown(f"<div class='textbox'><h3>✅ Revenue Growth is the key metric to focus for early stage startups<h3></div>", unsafe_allow_html=True)
+
+with col1, col2:
+    if selected_filter == "Startups":
+        startup_graph = create_state_distribution(data.copy(), "Startups", top_states_slider)
+        st.plotly_chart(startup_graph,use_container_width=True, height = 150)
+    elif selected_filter == "Accelerators":
+        accelerator_graph = create_state_distribution(data.copy(), "Accelerators", top_states_slider)
+        st.plotly_chart(accelerator_graph,use_container_width=True, height = 150)
+    elif selected_filter == "Incubators":
+        incubator_graph = create_state_distribution(data.copy(), "Incubators", top_states_slider)
+        st.plotly_chart(incubator_graph,use_container_width=True, height = 150)
+    else:
+        st.write("Please select a filter from the sidebar.")
+    st.markdown(textbox_style, unsafe_allow_html=True)
+    st.markdown(f"<div class='textbox'><h3>✅ Revenue Growth is the key metric to focus for early stage startups<h3></div>", unsafe_allow_html=True)
+
 
 with col1:
   sectors = ["Fintech", "Ecommerce", "Enterprisetech", "Media & Entertainment", "Edtech", "Traveltech", "Others"]
