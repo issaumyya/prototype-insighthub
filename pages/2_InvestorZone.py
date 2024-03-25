@@ -71,8 +71,7 @@ fig.update_layout(
     xaxis_zeroline=False,  # Remove zero line for x-axis
     yaxis_zeroline=False
 )
-with col1:
-        st.plotly_chart(fig,use_container_width=True, height = 170)
+st.plotly_chart(fig,use_container_width=True, height = 170)
 
 late_stage_data = pd.DataFrame({
   "sectors": ["Fintech", "Ecommerce", "Enterprisetech", "Cleantech", "Consumer Services", "Deeptech", "Others"],
@@ -131,7 +130,7 @@ df3 = pd.DataFrame({
 fig1 = px.area(
   df3,
   x="Year",
-  y=["Bengaluru", "Delhi", "Mumbai"],  # List of columns for area lines
+  y=["Mumbai", "Delhi", "Bengaluru"],  # List of columns for area lines
   title="YoY Funding Trends",
   labels={"Year": "Year", "y": "Funding Amount"},  # Customize axis labels
 )
