@@ -38,6 +38,7 @@ fig.update_layout(
 )
 
 fig.update_layout(xaxis=dict(tickmode="linear"), bargap=0.1)
+fig.update_layout(legend=dict(orientation="h", x=0.5, y=-0.1))
 with col1:
         st.plotly_chart(fig)
 
