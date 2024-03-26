@@ -93,7 +93,6 @@ fig2.update_layout(
         title = "Number of Investors Backing Indian Startups",
         showlegend = False
 )
-st.plotly_chart(fig2,use_container_width=True, height = 150)
 
 with col1:
     data1 = {
@@ -124,4 +123,5 @@ with col1:
         color='Sector', 
         title='Funding Amount (in Mn) by Sector')
     st.plotly_chart(fig3, use_container_width=True, height = 350)
-
+with col1:
+    st.plotly_chart(fig2,use_container_width=True, height = 150)
