@@ -3,6 +3,22 @@ import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+textbox_style = """
+    <style>
+        .textbox {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #076D90;
+            text-align: center;
+        }
+        .textbox h3{
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+        }
+    </style>
+"""
 
 years = ["Q1-2020", "Q2-2020", "Q3-2020", "Q4-2020", "Q1-2021", "Q2-2021", "Q3-2021", "Q4-2021", "Q1-2022",
         "Q2-2022", "Q3-2022", "Q4-2022","Q1-2023", "Q2-2023", "Q3-2023", "Q4-2023 (Till Nov.)"]
@@ -41,6 +57,13 @@ fig.update_layout(xaxis=dict(tickmode="linear"), bargap=0.1)
 fig.update_layout(legend=dict(orientation="h", x=0, y=1.5))
 with col1:
         st.plotly_chart(fig,use_container_width=True, height = 170)
+        col11, col12 = st.columns((2))
+        with col11:
+                st.markdown(textbox_style, unsafe_allow_html=True)
+                st.markdown(f"<div class='textbox'>✅<h1>35%</h1><h3> YoY Decline in median ticket size of funding</h3></div>", unsafe_allow_html=True)
+        with col12:
+                st.markdown(textbox_style, unsafe_allow_html=True)
+                st.markdown(f"<div class='textbox'>✅<h1>$9 Bn </h1><h3>Total Funding in 2023</h3></div>", unsafe_allow_html=True)
 
 sector_name = ["Ecommerce", "Enterprisetech", "Fintech", "Deeptech", "Healthtech", "Cleantech", "Edtech", "Media & Entertainment", "Consumer Services", "Logistics"]
 funding_amount_raised = [3.02, 2.6, 1.3, 0.86, 0.50, 0.39, 0.37, 0.28, 0.28, 0.23]
@@ -72,47 +95,6 @@ fig.update_layout(
     yaxis_zeroline=False
 )
 st.plotly_chart(fig,use_container_width=True, height = 170)
-
-late_stage_data = pd.DataFrame({
-  "sectors": ["Fintech", "Ecommerce", "Enterprisetech", "Cleantech", "Consumer Services", "Deeptech", "Others"],
-  "funding_amount": [2.1, 1.3, 0.6, 0.6, 0.3, 0.1, 0.6]
-})
-
-growth_stage_data = pd.DataFrame({
-  "sectors": ["Fintech", "Ecommerce", "Enterprisetech", "Deeptech", "Logistics", "Cleantech", "Others"],
-  "funding_amount": [0.721, 0.543, 0.489, 0.209, 0.200, 0.190, 0.587]
-})
-
-seed_stage_data = pd.DataFrame({
-  "sectors": ["Enterprisetech", "Fintech", "Ecommerce", "Cleantech", "Deeptech", "Media & Entertainment", "Others"],
-  "funding_amount": [0.143, 0.139, 0.089, 0.057, 0.051, 0.046, 0.155]
-})
-
-selected_stage = None
-selected_stage = st.radio("Select Funding Stage:", ["Late Stage", "Growth Stage", "Seed Stage"])
-
-def get_top_sector(data):
-  top_sector = data["sectors"].iloc[data["funding_amount"].idxmax()]
-  return top_sector
-
-# Display based on selected stage
-if selected_stage is not None:
-  # Select the appropriate data based on the chosen stage
-  if selected_stage == "Late Stage":
-    data = late_stage_data.copy()  # Avoid modifying original DataFrame
-  elif selected_stage == "Growth Stage":
-    data = growth_stage_data.copy()
-  else:
-    data = seed_stage_data.copy()
-
-  # Pie chart
-  fig = px.pie(data, values="funding_amount", names="sectors", title=f"{selected_stage} Investment Distribution")
-  st.plotly_chart(fig)
-
-  # Top sector text
-  top_sector = get_top_sector(data.copy())
-  st.write(f"Top Sector in {selected_stage}: {top_sector}")
-
 yoy = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"]
 beng = [2.7, 3.4, 1.4, 7.2, 5.3, 5.7, 5.6, 22, 11, 4.2]
 delhi = [1.6, 3.7, 2, 4, 4.5, 4.7, 3.7, 10, 5.5, 2.7]
@@ -138,3 +120,47 @@ fig1 = px.area(
 # Display the chart (optional, for standalone usage)
 with col2:
         st.plotly_chart(fig1,use_container_width=True, height = 170)
+late_stage_data = pd.DataFrame({
+  "sectors": ["Fintech", "Ecommerce", "Enterprisetech", "Cleantech", "Consumer Services", "Deeptech", "Others"],
+  "funding_amount": [2.1, 1.3, 0.6, 0.6, 0.3, 0.1, 0.6]
+})
+
+growth_stage_data = pd.DataFrame({
+  "sectors": ["Fintech", "Ecommerce", "Enterprisetech", "Deeptech", "Logistics", "Cleantech", "Others"],
+  "funding_amount": [0.721, 0.543, 0.489, 0.209, 0.200, 0.190, 0.587]
+})
+
+seed_stage_data = pd.DataFrame({
+  "sectors": ["Enterprisetech", "Fintech", "Ecommerce", "Cleantech", "Deeptech", "Media & Entertainment", "Others"],
+  "funding_amount": [0.143, 0.139, 0.089, 0.057, 0.051, 0.046, 0.155]
+})
+
+selected_stage = None
+with col2:
+        selected_stage = st.radio("Select Funding Stage:", ["Late Stage", "Growth Stage", "Seed Stage"])
+
+def get_top_sector(data):
+  top_sector = data["sectors"].iloc[data["funding_amount"].idxmax()]
+  return top_sector
+
+# Display based on selected stage
+if selected_stage is not None:
+  # Select the appropriate data based on the chosen stage
+  if selected_stage == "Late Stage":
+    data = late_stage_data.copy()  # Avoid modifying original DataFrame
+  elif selected_stage == "Growth Stage":
+    data = growth_stage_data.copy()
+  else:
+    data = seed_stage_data.copy()
+
+  # Pie chart
+  fig = px.pie(data, values="funding_amount", names="sectors", title=f"{selected_stage} Investment Distribution")
+  with col2:
+          st.plotly_chart(fig)
+
+  # Top sector text
+  top_sector = get_top_sector(data.copy())
+  with col2:
+          st.write(f"Top Sector in {selected_stage}: {top_sector}")
+
+
