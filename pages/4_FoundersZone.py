@@ -68,7 +68,7 @@ with col1:
     hole=.4,  # Adjust the hole size for a donut chart (0 for regular pie)
     title='Soonicorn Distribution by Sector')
 
-  pie_fig.update_layout(showlegend=False)
+  pie_fig.update_layout(showlegend=True)
   st.plotly_chart(pie_fig,use_container_width=True, height = 100)
   st.markdown(textbox_style, unsafe_allow_html=True)
   st.markdown(f"<div class='textbox'><h3>✅ Fintech is the most likely sector to generate future unicorns in India<h3></div>", unsafe_allow_html=True)
