@@ -77,8 +77,8 @@ data1 = pd.DataFrame({
 
 # Filter selection for x-axis
 x_axis_options = {"Funding Amount ($ Bn)": "Funding Amount ($ Bn)", "Number of Deals": "Number of Deals"}
-
-selected_x_axis = st.selectbox("Choose X-Axis", options=list(x_axis_options.keys()), index=0)
+with col1:
+    selected_x_axis = st.selectbox("Choose X-Axis", options=list(x_axis_options.keys()), index=0)
 selected_x_axis_value = x_axis_options[selected_x_axis]
 
 # Create the bar graph
@@ -94,7 +94,8 @@ fig.update_layout(
     xaxis_zeroline=False,  # Remove zero line for x-axis
     yaxis_zeroline=False
 )
-st.plotly_chart(fig,use_container_width=True, height = 170)
+with col1:
+    st.plotly_chart(fig,use_container_width=True, height = 170)
 yoy = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"]
 beng = [2.7, 3.4, 1.4, 7.2, 5.3, 5.7, 5.6, 22, 11, 4.2]
 delhi = [1.6, 3.7, 2, 4, 4.5, 4.7, 3.7, 10, 5.5, 2.7]
