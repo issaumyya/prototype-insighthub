@@ -78,7 +78,7 @@ data1 = pd.DataFrame({
 # Filter selection for x-axis
 x_axis_options = {"Funding Amount ($ Bn)": "Funding Amount ($ Bn)", "Number of Deals": "Number of Deals"}
 with col1:
-    selected_x_axis = st.selectbox(options=list(x_axis_options.keys()), index=0)
+    selected_x_axis = st.selectbox("", options=list(x_axis_options.keys()), index=0)
 selected_x_axis_value = x_axis_options[selected_x_axis]
 
 # Create the bar graph
