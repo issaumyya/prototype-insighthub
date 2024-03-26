@@ -87,8 +87,7 @@ fig2.update_layout(
         showlegend = False
 )
 
-with col1:
-    data1 = {
+data1 = {
         'Sector': [
             'Fintech', 'Fintech', 'Fintech', 'Fintech', 'Fintech', 'Fintech',
             'Ecommerce', 'Ecommerce', 'Ecommerce', 'Ecommerce',
@@ -108,16 +107,17 @@ with col1:
             147, 124, 123, 29, 9
         ]
     }
-    df4 = pd.DataFrame(data1)
-    fig3 = px.treemap(
-        df4,
-        path=[df4['Sector'], df4['Subsector']],  # Path for hierarchical levels (Sector, Subsector)
-        values='Value',  
-        color='Sector', 
-        title='Funding Amount (in Mn) by Sector')
-    st.plotly_chart(fig3, use_container_width=True, height = 350)
+df4 = pd.DataFrame(data1)
+fig3 = px.treemap(
+    df4,
+    path=[df4['Sector'], df4['Subsector']],  # Path for hierarchical levels (Sector, Subsector)
+    values='Value',  
+    color='Sector', 
+    title='Funding Amount (in Mn) by Sector')
+st.plotly_chart(fig3, use_container_width=True, height = 350)
 with col2:
     st.plotly_chart(fig2,use_container_width=True, height = 150)
+with col1:
     sectors = ["Upto 2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"]
     no_of_unicorns = [4,3,3,2,1,10,7,12,45,22,2]
     uni_fig = px.bar(x=sectors, y=no_of_unicorns)
