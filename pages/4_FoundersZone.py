@@ -114,7 +114,8 @@ fig3 = px.treemap(
     values='Value',  
     color='Sector', 
     title='Funding Amount (in Mn) by Sector')
-st.plotly_chart(fig3, use_container_width=True, height = 350)
+with col1,col2:
+    st.plotly_chart(fig3, use_container_width=True, height = 350)
 with col2:
     st.plotly_chart(fig2,use_container_width=True, height = 150)
 with col1:
