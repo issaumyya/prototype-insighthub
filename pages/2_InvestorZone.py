@@ -161,6 +161,7 @@ if selected_stage is not None:
   # Top sector text
   top_sector = get_top_sector(data.copy())
   with col2:
-          st.write(f"Top Sector in {selected_stage}: {top_sector}")
+          st.markdown(textbox_style, unsafe_allow_html=True)
+          st.markdown(f"<div class='textbox'><h3>Top Sector in {selected_stage}: {top_sector}</h3></div>", unsafe_allow_html=True)
 
 
