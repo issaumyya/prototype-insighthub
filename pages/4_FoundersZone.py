@@ -116,9 +116,9 @@ fig3 = px.treemap(
     title='Funding Amount (in Mn) by Sector')
 with col1,col2:
     st.plotly_chart(fig3, use_container_width=True, height = 350)
-with col2:
-    st.plotly_chart(fig2,use_container_width=True, height = 150)
 with col1:
+    st.plotly_chart(fig2,use_container_width=True, height = 150)
+with col2:
     sectors = ["Upto 2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"]
     no_of_unicorns = [4,3,3,2,1,10,7,12,45,22,2]
     uni_fig = px.bar(x=sectors, y=no_of_unicorns)
