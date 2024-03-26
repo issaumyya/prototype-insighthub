@@ -60,10 +60,10 @@ with col1:
         col11, col12 = st.columns((2))
         with col11:
                 st.markdown(textbox_style, unsafe_allow_html=True)
-                st.markdown(f"<div class='textbox'>✅<h1>35%</h1><h3> YoY Decline in median ticket size of funding</h3></div>", unsafe_allow_html=True)
+                st.markdown(f"<div class='textbox'><h1>35%</h1><h3> YoY Decline in median ticket size of funding</h3></div>", unsafe_allow_html=True)
         with col12:
                 st.markdown(textbox_style, unsafe_allow_html=True)
-                st.markdown(f"<div class='textbox'>✅<h1>$9 Bn </h1><h3>Total Funding in 2023</h3></div>", unsafe_allow_html=True)
+                st.markdown(f"<div class='textbox'><h1>$9 Bn </h1><h3>Total Funding in 2023</h3></div>", unsafe_allow_html=True)
 
 sector_name = ["Ecommerce", "Enterprisetech", "Fintech", "Deeptech", "Healthtech", "Cleantech", "Edtech", "Media & Entertainment", "Consumer Services", "Logistics"]
 funding_amount_raised = [3.02, 2.6, 1.3, 0.86, 0.50, 0.39, 0.37, 0.28, 0.28, 0.23]
