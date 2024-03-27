@@ -4,6 +4,8 @@ import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+ with st.sidebar:
+        st.page_link('streamlit_app.py', label='Home Page', icon='📈')
 st.title("Welcome to InsightHub!")
 col1, col2 = st.columns((2))
 textbox_style = """
