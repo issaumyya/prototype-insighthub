@@ -64,7 +64,7 @@ with tab2:
         (investment_emoji, "Blockchain startup secures $50 million in Series A funding round"),
     ]
 
-    news_html = [
+    news_html1 = [
         f'<div style="padding: 10px; border-radius: 5px; margin-bottom: 10px; border: 1px solid #ddd; transition: box-shadow 0.3s; cursor: pointer;" onmouseover="this.style.boxShadow=\'0px 4px 8px rgba(0, 0, 0, 0.2)\'" onmouseout="this.style.boxShadow=\'none\'">'
         f'<span style="font-size: 20px; margin-right: 10px;">{emoji}</span>'
         f'<span style="font-size: 16px;">{title}</span>'
