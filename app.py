@@ -4,8 +4,6 @@ import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-st.page_link('streamlit_app.py', label='Home Page', icon='📈')
-
 textbox_style = """
     <style>
         .textbox {
