@@ -20,10 +20,7 @@ textbox_style = """
         }
     </style>
 """
-with st.sidebar:
-    with st.popover("Open popover"):
-        name = st.text_input("What's your name?")
-    st.text(name, "good to see you!")
+
 st.header('I N S I G H T  H U B', divider='blue')
 st.subheader('_Empowering_ enterpreneur landscape of :blue[India] :sunglasses:')
 
