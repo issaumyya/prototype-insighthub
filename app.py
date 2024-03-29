@@ -45,6 +45,7 @@ with tab1:
 
     for emoji, title in news.items():
         st.markdown(f"{emoji} {title}")
+    st.write(f"Number of news items: {len(news)}")
 
 with tab2:
     st.header("Latest News")
