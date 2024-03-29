@@ -4,8 +4,7 @@ import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-with st.sidebar:
-        st.page_link('streamlit_app.py', label='Home Page', icon='📈')
+st.page_link('streamlit_app.py', label='Home Page', icon='📈')
 col1, col2 = st.columns((2))
 textbox_style = """
     <style>
@@ -23,7 +22,7 @@ textbox_style = """
         }
     </style>
 """
-with col1:
+with st.sidebar:
         with st.popover("Open popover"):
                 name = st.text_input("What's your name?")
 st.title("Welcome to InsightHub,", name)
