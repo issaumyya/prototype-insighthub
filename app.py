@@ -33,3 +33,8 @@ with col2:
     st.plotly_chart(uni_fig,use_container_width=True, height = 150)
     st.markdown(textbox_style, unsafe_allow_html=True)
     st.markdown(f"<div class='textbox'><h1>2</h1> <h3>Unicorns were Minted in 2023, a decline by 91% from last year<h3></div>", unsafe_allow_html=True)
+with col1:
+    if st.button("Fellow Investor?"):
+        st.switch_page("2_InvestorZone.py")
+    if st.button("Fellow Founder?"):
+        st.switch_page("2_FoundersZone.py")
