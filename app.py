@@ -18,7 +18,7 @@ with col3:
     if st.button("Talk to Us!"):
         st.switch_page("pages/1_TalkToUs.py")
 
-tab1, tab2, tab3 = st.tabs(["Cat", "Dog", "Owl"])
+tab1, tab2, tab3 = st.tabs(["India", "Global", "About Us"])
     with tab1:
         st.header("A cat")
         st.image("https://static.streamlit.io/examples/cat.jpg", width=200)
