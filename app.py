@@ -49,10 +49,29 @@ with tab1:
     ]
     news_html = "".join(news_html)
     st.markdown(news_html, unsafe_allow_html=True)
-    #for emoji, title in news:
-        #st.write(f"{emoji} {title}\n")
 with tab2:
     st.header("Latest News")
+    global_news = [
+        "Databricks’ GPT rival and who’s investing in “underdog” founders",
+        "How a tiny 4-person startup, Supaglue, caught Stripe’s eye",
+        "The final countdown: Early Stage 2024 ticket savings end tonight",
+        "Byju’s founder floats share offer to make peace with estranged investors",
+        "Buy now, pay later on a Porsche? Zaver now has $30M to make it a reality",
+        "New AI-powered health tech startup revolutionizes patient care",
+        "Blockchain startup secures $50 million in Series A funding round",
+        "Electric vehicle startup announces plans for global expansion",
+        "Food delivery startup partners with leading restaurants for innovative services",
+        "Healthcare startup introduces groundbreaking medical device for early disease detection"
+    ]
+    news_html = [
+        f'<div style="padding: 10px; border-radius: 5px; margin-bottom: 10px; border: 1px solid #ddd; transition: box-shadow 0.3s; cursor: pointer;" onmouseover="this.style.boxShadow=\'0px 4px 8px rgba(0, 0, 0, 0.2)\'" onmouseout="this.style.boxShadow=\'none\'">'
+        f'<span style="font-size: 20px; margin-right: 10px;">{emoji}</span>'
+        f'<span style="font-size: 16px;">{title}</span>'
+        '</div>'
+        for emoji, title in global_news
+    ]
+    news_html1 = "".join(news_html1)
+    st.markdown(news_html1, unsafe_allow_html=True)
 
 with tab3:
     st.header("About InsightHub")
