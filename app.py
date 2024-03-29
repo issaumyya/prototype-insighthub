@@ -40,8 +40,17 @@ with tab1:
         (investment_emoji, "L Catterton To Launch India-Focussed Consumer Fund"),
         (business_emoji, "PhonePe Enables UPI Payments For Indians In UAE"),
     ]
-    for emoji, title in news:
-        st.write(f"{emoji} {title}\n")
+    news_html = [
+        f'<div style="padding: 10px; border-radius: 5px; margin-bottom: 10px; background-color: #f0f0f0; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); transition: box-shadow 0.3s; cursor: pointer;" onmouseover="this.style.boxShadow=\'0px 4px 8px rgba(0, 0, 0, 0.2)\'" onmouseout="this.style.boxShadow=\'0px 2px 4px rgba(0, 0, 0, 0.1)\'">'
+        f'<span style="font-size: 20px; margin-right: 10px;">{emoji}</span>'
+        f'<span style="font-size: 16px;">{title}</span>'
+        '</div>'
+        for emoji, title in news
+    ]
+    news_html = "".join(news_html)
+    st.markdown(news_html, unsafe_allow_html=True)
+    #for emoji, title in news:
+        #st.write(f"{emoji} {title}\n")
 with tab2:
     st.header("Latest News")
 
