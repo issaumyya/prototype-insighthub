@@ -40,8 +40,8 @@ with tab1:
         (investment_emoji, "L Catterton To Launch India-Focussed Consumer Fund"),
         (business_emoji, "PhonePe Enables UPI Payments For Indians In UAE"),
     ]
-    news_strings = [f"{emoji} {title}" for emoji, title in news]
-    st.markdown(news_strings)
+    for emoji, title in news:
+        st.write(f"{emoji} {title}\n")
 with tab2:
     st.header("Latest News")
 
