@@ -7,7 +7,7 @@ from plotly.subplots import make_subplots
 
 st.header('I N S I G H T  H U B', divider='blue')
 st.subheader('_Empowering_ enterpreneur landscape of :blue[India] :sunglasses:')
-col1, col2, col3 = st.column((3))
+col1, col2, col3 = st.columns((3))
 with col1:
     if st.button("Fellow Investor?"):
         st.switch_page("pages/2_InvestorZone.py")
