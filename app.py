@@ -51,7 +51,7 @@ with tab1:
     news_html = "".join(news_html)
     st.markdown(news_html, unsafe_allow_html=True)
 with tab2:
-    st.header("Latest News")
+    st.subheader("Latest News")
     global_news = [
         [
         (technology_emoji, "Databricks’ GPT rival and who’s investing in “underdog” founders"),
