@@ -20,7 +20,7 @@ with col3:
 
 tab1, tab2, tab3 = st.tabs(["India                 ", "Global                 ", "About Us                 "])
 with tab1:
-    st.header("Latest News")
+    st.subheader("Latest News")
     business_emoji = "💸"
     government_emoji = "️🚨"
     startup_emoji = "📊"
