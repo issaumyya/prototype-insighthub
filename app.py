@@ -22,7 +22,7 @@ textbox_style = """
 """
 with st.popover("Open popover"):
     name = st.text_input("What's your name?")
-st.subheader('Welcome to InsightHub!', divider='blue')
+st.header('Welcome to InsightHub!', name, divider='blue')
 st.subheader('_Empowering_ enterpreneur landscape of :blue[India] :sunglasses:')
 
 sectors = ["Upto 2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"]
