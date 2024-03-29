@@ -37,3 +37,5 @@ with col1:
         st.switch_page("pages/2_InvestorZone.py")
     if st.button("Fellow Founder?"):
         st.switch_page("pages/3_FoundersZone.py")
+    if st.button("Talk to Us!"):
+        st.switch_page("pages/1_TalkToUs.py")
