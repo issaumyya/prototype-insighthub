@@ -58,7 +58,7 @@ fig.update_layout(legend=dict(orientation="h", x=0, y=1.5))
 with col1:
         st.plotly_chart(fig,use_container_width=True, height = 170)
         col11, col12 = st.columns((2))
-        col11.metric("YoY Decline in median ticket size of funding", "", "-35%")
+        col11.metric("YoY Decline in median ticket size of funding", "-35%")
                 
                 #st.markdown(textbox_style, unsafe_allow_html=True)
                 #st.markdown(f"<div class='textbox'><h1>35%</h1><h3> YoY Decline in median ticket size of funding</h3></div>", unsafe_allow_html=True)
