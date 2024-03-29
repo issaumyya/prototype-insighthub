@@ -28,7 +28,7 @@ with tab1:
     investment_emoji = "💸"
     technology_emoji = "🖥"
 
-    news = {
+    news_titles = {
         business_emoji: "RateGain Founder Bhanu Chopra’s Family Members Offload 3% Stake",
         startup_emoji: "Startup Mahakumbh: Startups Supported By MeitY Startup Hub Showcase Their Innovations",
         business_emoji: "BillDesk’s FY23 Profit Dips 5%, Revenue Inches Closer To INR 3,000 Cr Mark",
@@ -42,10 +42,21 @@ with tab1:
         investment_emoji: "L Catterton To Launch India-Focussed Consumer Fund",
         business_emoji: "PhonePe Enables UPI Payments For Indians In UAE",
     }
-
-    for emoji, title in news.items():
-        st.markdown(f"{emoji} {title}")
-    st.write(f"Number of news items: {len(news)}")
+    news = {
+        business_emoji: [],
+        government_emoji: [],
+        startup_emoji: [],
+        investment_emoji: [],
+        technology_emoji: [],
+    }
+    for title in news_titles:
+        words = title.split()
+        emoji = words[0]
+        news[emoji].append(title[len(emoji) + 1:]) 
+        
+    for emoji, titles in news.items():
+        for title in titles:
+            st.text(f"{emoji} {title}")
 
 with tab2:
     st.header("Latest News")
