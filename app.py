@@ -59,7 +59,7 @@ with tab2:
         (investment_emoji, "Buy now, pay later on a Porsche? Zaver now has $30M to make it a reality"),
         (technology_emoji, "New AI-powered health tech startup revolutionizes patient care"),
         (business_emoji, "Electric vehicle startup announces plans for global expansion"),
-        (government_emoji, "Food delivery startup partners with leading restaurants for innovative services",
+        (government_emoji, "Food delivery startup partners with leading restaurants for innovative services"),
         (business_emoji, "Healthcare startup introduces groundbreaking medical device for early disease detection"),
         (investment_emoji, "Blockchain startup secures $50 million in Series A funding round"),
     ]
