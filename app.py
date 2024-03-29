@@ -44,7 +44,7 @@ with tab1:
     }
 
     for emoji, title in news.items():
-        st.subheader(f"{emoji} {title}")
+        st.text(f"{emoji} {title}")
 
 with tab2:
     st.header("Latest News")
