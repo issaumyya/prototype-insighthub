@@ -21,7 +21,7 @@ textbox_style = """
     </style>
 """
 
-st.header(f'<h1>I N S I G H T  H U B</h1>', divider='blue', unsafe_allow_html=True)
+st.header('I N S I G H T  H U B', divider='blue')
 st.subheader('_Empowering_ enterpreneur landscape of :blue[India] :sunglasses:')
 
 sectors = ["Upto 2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"]
