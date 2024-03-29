@@ -51,7 +51,7 @@ with col1, col2:
         st.plotly_chart(incubator_graph,use_container_width=True, height = 170)
     else:
         st.write("Please select a filter from the sidebar.")
-    col2.metric("Key Metric for Early Stage Startups is", " ", "Revenue Growth")
+    col2.metric("Key Metric for Early Stage Startups is", "Revenue Growth")
 
 
 with col1:
