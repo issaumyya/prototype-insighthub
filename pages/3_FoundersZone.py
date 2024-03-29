@@ -51,8 +51,7 @@ with col1, col2:
         st.plotly_chart(incubator_graph,use_container_width=True, height = 170)
     else:
         st.write("Please select a filter from the sidebar.")
-    st.markdown(textbox_style, unsafe_allow_html=True)
-    st.markdown(f"<div class='textbox'><h3>✅ Revenue Growth is the key metric to focus for early stage startups<h3></div>", unsafe_allow_html=True)
+    col2.metric("Key Metric for Early Stage Startups is", " ", "Revenue Growth")
 
 
 with col1:
