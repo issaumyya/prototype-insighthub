@@ -21,40 +21,28 @@ with col3:
 tab1, tab2, tab3 = st.tabs(["India                 ", "Global                 ", "About Us                 "])
 with tab1:
     st.header("Latest News")
-
-    business_emoji = "📊"
+    business_emoji = "💸"
     government_emoji = "️🚨"
-    startup_emoji = "💰"
-    investment_emoji = "💸"
+    startup_emoji = "📊"
+    investment_emoji = "💰"
     technology_emoji = "🖥"
     news = {
-        business_emoji: [
-            "RateGain Founder Bhanu Chopra’s Family Members Offload 3% Stake", "BillDesk’s FY23 Profit Dips 5%, Revenue Inches Closer To INR 3,000 Cr Mark",
-        "Keep Proceeds From Rights Issues In Escrow Account, Consider Extension Of Issue: NCLT To BYJU’S",
-        "Swiggy’s Reported $207 Mn In Losses Between Q1 & Q3 FY24",
-        "Mamaearth Forays Into Colour Cosmetics Space With ‘Staze’",
-        "PhonePe Enables UPI Payments For Indians In UAE",
-        ],
-        government_emoji: [
-            "There Are Chances Of Misuse Of AI Without Proper Training: PM Narendra Modi", "Startups Under I-T Dept Scanner, Get Tax Notices Over VC Funding",
-        ],
-        startup_emoji: [
-            "Startup Mahakumbh: Startups Supported By MeitY Startup Hub Showcase Their Innovations",
-        ],
-        investment_emoji: [
-            "Sustainable Packaging Startup Bambrew Bags INR 60 Cr From Blume Ventures, Others",
-        "TAC Infosec IPO Day 2: Public Issue Oversubscribed 22.8X",
-        "L Catterton To Launch India-Focussed Consumer Fund",
-        ],
-    # No technology news in this example
-}
+        business_emoji: "RateGain Founder Bhanu Chopra’s Family Members Offload 3% Stake",
+        startup_emoji: "Startup Mahakumbh: Startups Supported By MeitY Startup Hub Showcase Their Innovations",
+        business_emoji: "BillDesk’s FY23 Profit Dips 5%, Revenue Inches Closer To INR 3,000 Cr Mark",
+        investment_emoji: "Sustainable Packaging Startup Bambrew Bags INR 60 Cr From Blume Ventures, Others",
+        government_emoji: "There Are Chances Of Misuse Of AI Without Proper Training: PM Narendra Modi",
+        business_emoji: "Keep Proceeds From Rights Issues In Escrow Account, Consider Extension Of Issue: NCLT To BYJU’S",
+        government_emoji: "Startups Under I-T Dept Scanner, Get Tax Notices Over VC Funding",
+        business_emoji: "Swiggy’s Reported $207 Mn In Losses Between Q1 & Q3 FY24",
+        investment_emoji: "TAC Infosec IPO Day 2: Public Issue Oversubscribed 22.8X",
+        business_emoji: "Mamaearth Forays Into Colour Cosmetics Space With ‘Staze’",
+        investment_emoji: "L Catterton To Launch India-Focussed Consumer Fund",
+        business_emoji: "PhonePe Enables UPI Payments For Indians In UAE",
+    }
 
-for emoji, titles in news.items():
-    if titles:  # Check if there are news items for this category
-        print(f"{emoji}")  # Print the category emoji
-        for title in titles:
-            print(title)  # Print each news item
-        print("-" * 30)  # Print a separator for each category
+    for emoji, title in news.items():
+        st.subheader(f"{emoji} {title}")
 with tab2:
     st.header("Latest News")
 
