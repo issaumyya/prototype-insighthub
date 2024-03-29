@@ -53,7 +53,6 @@ with tab1:
 with tab2:
     st.subheader("Latest News")
     global_news = [
-        [
         (technology_emoji, "Databricks’ GPT rival and who’s investing in “underdog” founders"),
         (startup_emoji, "The final countdown: Early Stage 2024 ticket savings end tonight"),
         (business_emoji, "Byju’s founder floats share offer to make peace with estranged investors"),
