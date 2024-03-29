@@ -41,7 +41,7 @@ with tab1:
         (business_emoji, "PhonePe Enables UPI Payments For Indians In UAE"),
     ]
     news_strings = [f"{emoji} {title}" for emoji, title in news]
-    st.write(news_strings)
+    st.markdown(news_strings)
 with tab2:
     st.header("Latest News")
 
