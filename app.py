@@ -23,6 +23,7 @@ textbox_style = """
 with st.popover("Open popover"):
     name = st.text_input("What's your name?")
 st.subheader('Welcome to InsightHub!', divider='blue')
+st.subheader('_Empowering_ enterpreneur landscape of :blue[India] :sunglasses:')
 
 sectors = ["Upto 2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"]
 no_of_unicorns = [4,3,3,2,1,10,7,12,45,22,2]
