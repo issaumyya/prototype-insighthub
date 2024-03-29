@@ -42,7 +42,7 @@ with tab1:
     }
 
     for emoji, title in news.items():
-        st.markdowm(f"{emoji} {title}\n")
+        st.markdowm(f"{emoji} {title}\n\n")
 with tab2:
     st.header("Latest News")
 
