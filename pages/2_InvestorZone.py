@@ -157,6 +157,6 @@ if selected_stage is not None:
 
   # Top sector text
   top_sector = get_top_sector(data.copy())
-col2.metric("Top Sector in {selected_stage}", "{top_sector}")
+col2.metric("Top Sector in" selected_stage, top_sector)
 
 
