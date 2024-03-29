@@ -26,20 +26,20 @@ with tab1:
     startup_emoji = "📊"
     investment_emoji = "💰"
     technology_emoji = "🖥"
-    news = {
-        business_emoji: "RateGain Founder Bhanu Chopra’s Family Members Offload 3% Stake",
-        startup_emoji: "Startup Mahakumbh: Startups Supported By MeitY Startup Hub Showcase Their Innovations",
-        business_emoji: "BillDesk’s FY23 Profit Dips 5%, Revenue Inches Closer To INR 3,000 Cr Mark",
-        investment_emoji: "Sustainable Packaging Startup Bambrew Bags INR 60 Cr From Blume Ventures, Others",
-        government_emoji: "There Are Chances Of Misuse Of AI Without Proper Training: PM Narendra Modi",
-        business_emoji: "Keep Proceeds From Rights Issues In Escrow Account, Consider Extension Of Issue: NCLT To BYJU’S",
-        government_emoji: "Startups Under I-T Dept Scanner, Get Tax Notices Over VC Funding",
-        business_emoji: "Swiggy’s Reported $207 Mn In Losses Between Q1 & Q3 FY24",
-        investment_emoji: "TAC Infosec IPO Day 2: Public Issue Oversubscribed 22.8X",
-        business_emoji: "Mamaearth Forays Into Colour Cosmetics Space With ‘Staze’",
-        investment_emoji: "L Catterton To Launch India-Focussed Consumer Fund",
-        business_emoji: "PhonePe Enables UPI Payments For Indians In UAE",
-    }
+    news = [
+        (business_emoji, "RateGain Founder Bhanu Chopra’s Family Members Offload 3% Stake"),
+        (startup_emoji, "Startup Mahakumbh: Startups Supported By MeitY Startup Hub Showcase Their Innovations"),
+        (business_emoji, "BillDesk’s FY23 Profit Dips 5%, Revenue Inches Closer To INR 3,000 Cr Mark"),
+        (investment_emoji, "Sustainable Packaging Startup Bambrew Bags INR 60 Cr From Blume Ventures, Others"),
+        (government_emoji, "There Are Chances Of Misuse Of AI Without Proper Training: PM Narendra Modi"),
+        (business_emoji, "Keep Proceeds From Rights Issues In Escrow Account, Consider Extension Of Issue: NCLT To BYJU’S"),
+        (government_emoji, "Startups Under I-T Dept Scanner, Get Tax Notices Over VC Funding"),
+        (business_emoji, "Swiggy’s Reported $207 Mn In Losses Between Q1 & Q3 FY24"),
+        (investment_emoji, "TAC Infosec IPO Day 2: Public Issue Oversubscribed 22.8X"),
+        (business_emoji, "Mamaearth Forays Into Colour Cosmetics Space With ‘Staze’"),
+        (investment_emoji, "L Catterton To Launch India-Focussed Consumer Fund"),
+        (business_emoji, "PhonePe Enables UPI Payments For Indians In UAE"),
+    ]
 
     for emoji, title in news.items():
         st.markdown(f"{emoji} {title}\n\n")
