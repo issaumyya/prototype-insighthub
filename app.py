@@ -17,15 +17,16 @@ with col2:
 with col3:
     if st.button("Talk to Us!"):
         st.switch_page("pages/1_TalkToUs.py")
+business_emoji = "💸"
+government_emoji = "️🚨"
+startup_emoji = "📊"
+investment_emoji = "💰"
+technology_emoji = "🖥"
 
 tab1, tab2, tab3 = st.tabs(["India                 ", "Global                 ", "About Us                 "])
 with tab1:
     st.subheader("Latest News")
-    business_emoji = "💸"
-    government_emoji = "️🚨"
-    startup_emoji = "📊"
-    investment_emoji = "💰"
-    technology_emoji = "🖥"
+
     news = [
         (business_emoji, "RateGain Founder Bhanu Chopra’s Family Members Offload 3% Stake"),
         (startup_emoji, "Startup Mahakumbh: Startups Supported By MeitY Startup Hub Showcase Their Innovations"),
@@ -52,17 +53,18 @@ with tab1:
 with tab2:
     st.header("Latest News")
     global_news = [
-        "Databricks’ GPT rival and who’s investing in “underdog” founders",
-        "How a tiny 4-person startup, Supaglue, caught Stripe’s eye",
-        "The final countdown: Early Stage 2024 ticket savings end tonight",
-        "Byju’s founder floats share offer to make peace with estranged investors",
-        "Buy now, pay later on a Porsche? Zaver now has $30M to make it a reality",
-        "New AI-powered health tech startup revolutionizes patient care",
-        "Blockchain startup secures $50 million in Series A funding round",
-        "Electric vehicle startup announces plans for global expansion",
-        "Food delivery startup partners with leading restaurants for innovative services",
-        "Healthcare startup introduces groundbreaking medical device for early disease detection"
+        [
+        (technology_emoji, "Databricks’ GPT rival and who’s investing in “underdog” founders"),
+        (startup_emoji, "The final countdown: Early Stage 2024 ticket savings end tonight"),
+        (business_emoji, "Byju’s founder floats share offer to make peace with estranged investors"),
+        (investment_emoji, "Buy now, pay later on a Porsche? Zaver now has $30M to make it a reality"),
+        (technology_emoji, "New AI-powered health tech startup revolutionizes patient care"),
+        (business_emoji, "Electric vehicle startup announces plans for global expansion"),
+        (government_emoji, "Food delivery startup partners with leading restaurants for innovative services",
+        (business_emoji, "Healthcare startup introduces groundbreaking medical device for early disease detection"),
+        (investment_emoji, "Blockchain startup secures $50 million in Series A funding round"),
     ]
+
     news_html = [
         f'<div style="padding: 10px; border-radius: 5px; margin-bottom: 10px; border: 1px solid #ddd; transition: box-shadow 0.3s; cursor: pointer;" onmouseover="this.style.boxShadow=\'0px 4px 8px rgba(0, 0, 0, 0.2)\'" onmouseout="this.style.boxShadow=\'none\'">'
         f'<span style="font-size: 20px; margin-right: 10px;">{emoji}</span>'
