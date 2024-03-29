@@ -6,7 +6,6 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 with st.sidebar:
         st.page_link('streamlit_app.py', label='Home Page', icon='📈')
-st.title("Welcome to InsightHub!")
 col1, col2 = st.columns((2))
 textbox_style = """
     <style>
@@ -24,6 +23,10 @@ textbox_style = """
         }
     </style>
 """
+with col1:
+        with st.popover("Open popover"):
+                name = st.text_input("What's your name?")
+st.title("Welcome to InsightHub,", name)
 
 sectors = ["Upto 2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"]
 no_of_unicorns = [4,3,3,2,1,10,7,12,45,22,2]
