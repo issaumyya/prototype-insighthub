@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 st.header('I N S I G H T  H U B', divider='blue')
-st.subheader('_Empowering_ enterpreneur landscape of :blue[India] :sunglasses:')
+st.subheader('_Empowering_ Entrepreneurial Landscape of :blue[India]')
 col1, col2, col3 = st.columns((3))
 with col1:
     if st.button("Fellow Investor?"):
