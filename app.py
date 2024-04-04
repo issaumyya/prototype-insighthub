@@ -76,5 +76,5 @@ with tab2:
 
 with tab3:
     st.header("About InsightHub")
-    st.image('Copy Of DTI Final Presentation.png')
+    st.image('dti.jpg')
 
