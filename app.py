@@ -75,6 +75,5 @@ with tab2:
     st.markdown(news_html1, unsafe_allow_html=True)
 
 with tab3:
-    st.header("About InsightHub")
-    st.image('dti.jpg')
+    st.image('dti.jpg', caption='Made by Saumya Joshi (N027) & Sumedh Pimpalkhute (N050) as part of DTI course 2023-24')
 
