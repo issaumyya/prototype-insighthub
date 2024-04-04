@@ -76,5 +76,4 @@ with tab2:
 
 with tab3:
     st.image('dti.jpg', caption='Made by Saumya Joshi (N027) & Sumedh Pimpalkhute (N050)')
-    st.markdown('as part of the course: Design Thinking & Innovation', unsafe_allow_html=True)
 
